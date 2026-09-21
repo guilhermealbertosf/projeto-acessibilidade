@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+:root{
+    --cor1: #EBE8E2;
+    --cor2: #e56d3f;
+    --cor3: #7230b9;
+}
+header{
+    text-align: center;
+    padding: 10px;
+    background-color: var(--cor3);
+}
+header nav{
+    
+}
+
+.tela-de-entrada{
+    background-color: #EBE8E2;
+}
+
+
+.secao-mapa{
+    text-align: center;
+}
+
+#mapa{
+    width: 200px;
+}
+
+footer{
+    background-color: #e56d3f;
+    text-align: center;
+}
