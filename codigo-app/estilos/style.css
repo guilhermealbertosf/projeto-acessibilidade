@@ -12,6 +12,10 @@
     --cor3: #7230b9;
 }
 
+a {
+    color: var(--cor2);
+}
+
 #menu-principal {
     display: flex;
     justify-content: space-around;
@@ -26,7 +30,7 @@ header{
 }
 
 .tela-de-entrada{
-    background-color: #EBE8E2;
+    background-color: var(--cor1);
 }
 
 
