@@ -16,12 +16,6 @@ a {
     color: var(--cor2);
 }
 
-#menu-principal {
-    display: flex;
-    justify-content: space-around;
-    gap: 5px;
-    width: 100%;
-}
 
 header{
     text-align: center;
@@ -29,23 +23,33 @@ header{
     background-color: var(--cor3);
 }
 
-.tela-de-entrada{
-    background-color: var(--cor1);
+header #menu-principal {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    width: 100%;
 }
 
+.tela-de-entrada{
+    background-color: var(--cor1);
+    margin: 0 0 20px 0;
+}
 
 .secao-mapa{
     text-align: center;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px; 
+    background-color: var(--cor2);
+    border-radius: 10px;
 }
-
-#mapa{
-    width: 200px;
+.secao-mapa #mapa{
+    width: 100%;
 }
 
 footer{
     background-color: #e56d3f;
     text-align: center;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
