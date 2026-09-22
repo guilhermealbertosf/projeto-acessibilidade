@@ -11,6 +11,14 @@
     --cor2: #e56d3f;
     --cor3: #7230b9;
 }
+
+#menu-principal {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    width: 100%;
+}
+
 header{
     text-align: center;
     padding: 10px;
@@ -33,4 +41,7 @@ header{
 footer{
     background-color: #e56d3f;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
