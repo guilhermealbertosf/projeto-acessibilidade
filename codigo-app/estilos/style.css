@@ -1,7 +1,10 @@
 *{
     margin: 0px;
     padding: 0px;
-
+    font-family: 'Jomhuria';
+    font-width: 400px;
+    font-style: regular;
+    font-size: 1.2em;
 }
 :root{
     --cor1: #EBE8E2;
@@ -12,9 +15,6 @@ header{
     text-align: center;
     padding: 10px;
     background-color: var(--cor3);
-}
-header nav{
-    
 }
 
 .tela-de-entrada{
