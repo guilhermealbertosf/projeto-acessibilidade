@@ -8,29 +8,49 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
 </head>
 <body>
     <header>
+        <a href="#" id="logo">
+            <img src="midia/Possível Logo.jpg" alt="imagem referente à logo da plataforma">
+        </a>
         <nav id="menu-principal">
-            <a href="#">Mapa da região</a>
-            <a href="#">Escolas cadastradas</a>
+            <a href="#">Escolas</a>
             <a href="#">Avaliações</a>
             <a href="#">Sobre</a>
+            <a class="botao-mapa" href="#" onclick="aviso()">Mapa</a>
         </nav> 
+        <a href="#">
+            <span onclick="aviso()" id="icone-menu" class="material-symbols-outlined">
+                menu
+            </span>
+        </a>
     </header>
 
-    <div class="tela-de-entrada">
-        <h2>Tela de entrada</h2>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, sint? Inventore dolores ipsum ipsa neque tenetur minima dolor libero esse quia sapiente aut possimus tempora dolorem amet, eaque ab sequi.
-        </p>
-    </div>
+    <main>
+        <div id="barra-de-pesquisa">
+            <input type="search" name="barra-de-pesquisa" id="barra-de-pesquisa">
+            pesquisa
+        </div>
+        <div id="opcoes">
+            opções
+        </div>
+        <div id="mapa">
+            <img src="midia/imagem-mapa.jpeg" alt="Imagem de mapa das escolas com acessibilidade.">
+]            mapa
+        </div>
+    </main>
+    
 
-<div class="secao-mapa">
-    <span class="barra-cima"></span>
-        <img id="mapa" src="https://www.almadeviajante.com/wp-content/uploads/mapa-do-brasil-1024x973.jpg" alt="Mapa com níveis de acessibilidade das escolas">
-    <span class="barra-baixo></span>
+
+    <!--
+    <div class="secao-mapa">
+        <span class="barra-cima"></span>
+            <img id="mapa" src="https://www.almadeviajante.com/wp-content/uploads/mapa-do-brasil-1024x973.jpg" alt="Mapa com níveis de acessibilidade das escolas">
+        <span class="barra-baixo></span>
     </div>
+    -->
 
     <footer>
         <p>

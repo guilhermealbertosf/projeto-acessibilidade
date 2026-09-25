@@ -1,10 +1,13 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    /*
     font-family: 'Jomhuria';
     font-width: 400px;
     font-style: regular;
     font-size: 1.2em;
+    */
 }
 :root{
     --cor1: #EBE8E2;
@@ -12,44 +15,112 @@
     --cor3: #7230b9;
 }
 
+
 a {
-    color: var(--cor2);
+    text-decoration: none;
+    color: white;
 }
 
 
+/* =========================== Cabeçalho ============================= */
+
 header{
+    position: relative;
+    width: 100%;
     text-align: center;
-    padding: 10px;
+    padding: 20px 0px 20px 0px;
     background-color: var(--cor3);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition-duration: 2s;
+}
+header #logo{
+    width: 72px;
+    height: 70px;
+    background-color: #f5f5dc46;
+    border-radius: 50%;
+
+}
+header #logo img{
+    width: 67px;
+    border-radius: 50%;
 }
 
 header #menu-principal {
     display: flex;
-    justify-content: space-around;
-    gap: 5px;
-    width: 100%;
+    justify-content: end;
+    gap: 20px;
 }
-
-.tela-de-entrada{
+header #menu-principal a{
+    padding: 5px 10px;
+    min-width: 32px;
+    max-height: 30px;
+    
+}
+header #menu-principal a:hover{
+    background-color: var(--cor2);
+    border-radius: 10px 0;
+    color: var(--cor1);
+    font-weight: bolder;
+    transition-duration: 2s;
+}
+header .botao-mapa{
     background-color: var(--cor1);
-    margin: 0 0 20px 0;
+    color: var(--cor3);
+    border-radius: 20px;
+    border: 1.5px solid rgba(0, 0, 0, 0.418);
+    width: 67px;
+    order: 0;
 }
 
-.secao-mapa{
-    text-align: center;
-    width: 80%;
-    margin: 10px auto;
-    padding: 10px; 
+header #icone-menu{
+    color: var(--cor3);
+    background-color: var(--cor1);
+    border-radius: 10px;
+    padding: 10px;
+}
+header #icone-menu:hover{
+    color: var(--cor1);
     background-color: var(--cor2);
     border-radius: 10px;
+    padding: 10px;
 }
-.secao-mapa #mapa{
+
+/* =============================== Corpo ============================= */
+
+main{
+    margin: 40px 0px 0px 0px;
+    display: flex;
+    gap: 10px;
+    
+}
+main #barra-de-pesquisa{
+    background-color: rgb(163, 166, 165);
+    
+}
+main #opcoes{
+    background-color: rgb(197, 197, 197);
+}
+main #mapa{
+    background-color: #e56d3f;
+    width: 80%;
+    padding: 10px;
+}
+main #mapa img{
     width: 100%;
 }
 
+
+
+
+/* =============================== Rodapé =========================== */
+
 footer{
-    background-color: #e56d3f;
-    text-align: center;
+    position: fixed;
     bottom: 0;
     width: 100%;
+    background-color: var(--cor1);
+    text-align: center;
+    padding: 10px;
 }
