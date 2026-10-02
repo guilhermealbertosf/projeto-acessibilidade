@@ -32,11 +32,13 @@ header{
     position: relative;
     width: 100%;
     text-align: center;
-    padding: 20px 0px 20px 0px;
+    padding: 20px 0px;
     background-color: var(--cor3);
+
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     transition-duration: 2s;
 }
 header #logo{
@@ -51,18 +53,22 @@ header #logo img{
     border-radius: 50%;
 }
 
-header #menu-principal {
+
+header #navbar {
     display: flex;
-    justify-content: end;
+    justify-content: start;
     gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
-header #menu-principal a{
+
+header #navbar a{
     padding: 5px 10px;
     min-width: 32px;
     max-height: 30px;
     font-weight: 700;
 }
-header #menu-principal a:hover{
+header #navbar a:hover{
     background-color: var(--cor2);
     border-radius: 10px 0;
     color: var(--cor1);
@@ -79,16 +85,7 @@ header .botao-mapa{
 }
 
 header #icone-menu{
-    color: var(--cor3);
-    background-color: var(--cor1);
-    border-radius: 10px;
-    padding: 10px;
-}
-header #icone-menu:hover{
-    color: var(--cor1);
-    background-color: var(--cor2);
-    border-radius: 10px;
-    padding: 10px;
+    display: none;
 }
 
 /* =============================== Corpo ============================= */
@@ -102,6 +99,8 @@ main{
     background-color: var(--cor2);
     margin: 40px auto 0px auto;
     padding: 20px;
+    max-width: 1000px;
+    border-radius: 10px;
 }
 
 /*======================= Filtro ===================*/

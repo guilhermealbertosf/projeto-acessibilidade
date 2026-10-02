@@ -1,0 +1,19 @@
+header{
+   justify-content: space-evenly;
+}
+header #navbar{
+   display: none;
+}
+header #icone-menu{
+    color: var(--cor3);
+    background-color: var(--cor1);
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+}
+header #icone-menu:hover{
+    color: var(--cor1);
+    background-color: var(--cor2);
+    border-radius: 10px;
+    padding: 10px;
+}
