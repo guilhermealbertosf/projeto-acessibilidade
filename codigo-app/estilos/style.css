@@ -12,14 +12,18 @@
 :root{
     --cor1: #EBE8E2;
     --cor2: #e56d3f;
-    --cor3: #7230b9;
+    --cor3: #633ef5;
 }
 
 
+body{
+    background-color: var(--cor1);
+}
 a {
     text-decoration: none;
     color: white;
 }
+
 
 
 /* =========================== Cabeçalho ============================= */
@@ -56,7 +60,7 @@ header #menu-principal a{
     padding: 5px 10px;
     min-width: 32px;
     max-height: 30px;
-    
+    font-weight: 700;
 }
 header #menu-principal a:hover{
     background-color: var(--cor2);
@@ -90,37 +94,69 @@ header #icone-menu:hover{
 /* =============================== Corpo ============================= */
 
 main{
-    margin: 40px 0px 0px 0px;
+    
     display: flex;
-    gap: 10px;
-    
+    gap: 5px;
+    justify-content: space-around;
+    align-items: start;
+    background-color: var(--cor2);
+    margin: 40px auto 0px auto;
+    padding: 20px;
 }
-main #barra-de-pesquisa{
-    background-color: rgb(163, 166, 165);
-    
+
+/*======================= Filtro ===================*/
+#secao-filtro{
+    background-color: var(--cor3);
+    border-radius: 10px;
+
+    display: none; /*oculto*/
 }
-main #opcoes{
-    background-color: rgb(197, 197, 197);
+#formulario{
+    padding: 10px; 
 }
-main #mapa{
-    background-color: #e56d3f;
-    width: 80%;
+#secao-filtro ul{
+    background-color: var(--cor1);
     padding: 10px;
 }
-main #mapa img{
+#secao-filtro li{
+    list-style-type: none;
+    padding: 10px;
+}
+
+/*======================= Mapa ===================*/
+#secao-mapa{
+    background-color: var(--cor1);
+    padding: 5px;
+    border-radius: 10px;
+}
+#imagem-mapa{
     width: 100%;
+    border-radius: 10px;
 }
 
 
+/*======================= Sobre ===================*/
+#secao-sobre{
+    text-align: justify;
+    padding: 40px;
+    background-color: white;
+    margin: auto;
+    max-width: 800px;
 
+}
+#secao-sobre h2{
+    text-align: center;
+    padding: 10px;
+}
 
 /* =============================== Rodapé =========================== */
 
 footer{
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
-    background-color: var(--cor1);
+    margin-top: 30px;
+    background-color: var(--cor2);
     text-align: center;
     padding: 10px;
 }

@@ -19,6 +19,7 @@
             <a href="#">Escolas</a>
             <a href="#">Avaliações</a>
             <a href="#">Sobre</a>
+            <a href="#">Cadastro</a>
             <a class="botao-mapa" href="#" onclick="aviso()">Mapa</a>
         </nav> 
         <a href="#">
@@ -29,35 +30,56 @@
     </header>
 
     <main>
-        <div id="barra-de-pesquisa">
-            <input type="search" name="barra-de-pesquisa" id="barra-de-pesquisa">
-            pesquisa
+
+
+<!-- ================= Filtro =================== -->
+        <div id="secao-filtro">
+
+            <form class="formulario" id="formulario" action="">
+
+                <h2 class="titulo">Filtrar escolas</h2>
+
+                <input type="text" name="search-bar" id="search-bar" class="search-bar">
+
+                <input class="botao-filtrar" type="button" value="Filtrar">
+            </form>
+
+            <ul>
+                <li>
+                    <p>Deficiencia auditiva</p>
+                    <img src="" alt="icone deficiência auditiva">
+                </li>
+                <li>
+                    <p>Deficiencia Visual</p>
+                    <img src="" alt="icone deficiência visual">
+                </li>
+            </ul>
         </div>
-        <div id="opcoes">
-            opções
-        </div>
-        <div id="mapa">
-            <img src="midia/imagem-mapa.jpeg" alt="Imagem de mapa das escolas com acessibilidade.">
-]            mapa
+
+
+<!-- ================= Mapa =================== -->
+        <div id="secao-mapa">
+            <img  id="imagem-mapa" src="midia/imagem-mapa.webp" alt="Imagem de mapa das escolas com acessibilidade.">
         </div>
     </main>
-    
+  
+<!-- ================= Mapa =================== -->
+        <div id="secao-sobre" class="secao-sobre">
+            <h2>Sobre</h2>
 
+            <p>
+                O Enlace Digital foi desenvolvido pensando em pessoas com deficiência (PCD) e suas famílias, principalmente nas etapas iniciais da escola onde enfrentam dificuldades para encontrar ambientes com acessibilidade específica para suas necessidades.
 
-    <!--
-    <div class="secao-mapa">
-        <span class="barra-cima"></span>
-            <img id="mapa" src="https://www.almadeviajante.com/wp-content/uploads/mapa-do-brasil-1024x973.jpg" alt="Mapa com níveis de acessibilidade das escolas">
-        <span class="barra-baixo></span>
-    </div>
-    -->
+                No Enlace Digital o familiar responsável poderá consultar informações sobre escolas e suas adequações para diferentes tipos de deficiência, seja visual, auditiva ou de mobilidade, além de visualizar a localização e avaliações das escolas. Dessa forma, o projeto busca centralizar essas informações e facilitar a busca por uma escola que atenda às necessidades específicas de cada pessoa.
+
+            </p>
+        </div>
+
 
     <footer>
         <p>
             &copy; Equipe 5 - todos os direitos reservados
-        </p>
-            
-        
+        </p> 
     </footer>
 
     <script src="scripts/script.js"></script>
