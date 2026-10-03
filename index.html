@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meu site</title>
 
-    
+
+    <link rel="shortcut icon" href="midia/logo-com-texto.jpg" type="image/x-icon">
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/mobile.css" media="screen and (max-width: 850px)">
 
-    <link rel="stylesheet" href="estilos/mobile.css" media="screen and (max-width: 610px)">
+    <title>Enlace Digital</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,10 +18,10 @@
 </head>
 <body>
     <header>
-        <a href="#" id="logo">
-            <img src="midia/Possível Logo.jpg" alt="imagem referente à logo da plataforma">
-        </a>
-
+        <div id="conteiner-logo">
+            <img id="logo" class="logo" src="midia/logo-branca.png" alt="imagem referente à logo da plataforma">
+            <h1>Enlace Digital</h1>
+        </div>
         <nav id="navbar">
             <a href="#">Escolas</a>
             <a href="#">Avaliações</a>
@@ -36,10 +37,10 @@
     </header>
     <div id="secao-topo">
     </div>
-    <main>
     
-
-<!-- ================= Filtro =================== -->
+    
+    <!-- ================= Filtro =================== -->
+    <main>
         <div id="secao-filtro">
 
             <form class="formulario" id="formulario" action="">
@@ -65,19 +66,21 @@
 
 
 <!-- ================= Mapa =================== -->
+    <div id="secao-mapa">
         <h2>Mapa de acessibilidade</h2>
-        <div id="secao-mapa">
-            <img  id="imagem-mapa" src="midia/imagem-mapa.webp" alt="Imagem de mapa das escolas com acessibilidade.">
-        </div>
+        <img  id="imagem-mapa" src="midia/imagem-mapa.webp" alt="Imagem de mapa das escolas com acessibilidade.">
+        <p>Encontre a escola com melhor acessibilidade para necessidades específicas.</p>
+    </div>
     </main>
   
 <!-- ================= Mapa =================== -->
         <div id="secao-sobre" class="secao-sobre">
-            <h2>Sobre</h2>
+            <h2>Sobre nossa iniciativa</h2>
 
             <p>
                 O Enlace Digital foi desenvolvido pensando em pessoas com deficiência (PCD) e suas famílias, principalmente nas etapas iniciais da escola onde enfrentam dificuldades para encontrar ambientes com acessibilidade específica para suas necessidades.
-
+            </p>
+            <p>
                 No Enlace Digital o familiar responsável poderá consultar informações sobre escolas e suas adequações para diferentes tipos de deficiência, seja visual, auditiva ou de mobilidade, além de visualizar a localização e avaliações das escolas. Dessa forma, o projeto busca centralizar essas informações e facilitar a busca por uma escola que atenda às necessidades específicas de cada pessoa.
 
             </p>

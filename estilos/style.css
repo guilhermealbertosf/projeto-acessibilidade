@@ -10,14 +10,14 @@
     */
 }
 :root{
-    --cor1: #9a9998a9;
+    --cor1: #ffffff;
     --cor2: #e56d3f;
     --cor3: #813ef5;
 }
 
 
 body{
-    background-color: var(--cor1);
+    background: linear-gradient(90deg, #ffffff, #8080807c);
 }
 a {
     text-decoration: none;
@@ -41,18 +41,22 @@ header{
     flex-wrap: wrap;
     transition-duration: 2s;
 }
+header div#conteiner-logo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+}
+
+header h1{
+    font-family: serif;
+}
 header #logo{
     width: 72px;
-    height: 70px;
-    background-color: #f5f5dc46;
+    background-color: var(--cor1);
     border-radius: 50%;
 
 }
-header #logo img{
-    width: 67px;
-    border-radius: 50%;
-}
-
 
 header #navbar {
     display: flex;
@@ -61,7 +65,6 @@ header #navbar {
     flex-wrap: wrap;
     flex-direction: row;
 }
-
 header #navbar a{
     padding: 5px 10px;
     min-width: 32px;
@@ -69,11 +72,14 @@ header #navbar a{
     font-weight: 700;
 }
 header #navbar a:hover{
-    background-color: var(--cor2);
-    border-radius: 10px 0;
+    background-color: #f860f863;
+    border-radius: 6px 0 6px 6px;
     color: var(--cor1);
     font-weight: bolder;
     transition-duration: 0.3s;
+}
+header #navbar a:active{
+    background-color: var(--cor3);
 }
 header .botao-mapa{
     background-color: white;
@@ -91,10 +97,11 @@ header #icone-menu{
 /* =============================== Topo ============================= */
 
 #secao-topo{
-    background: var(--cor1) url(../midia/imagem-de-fundo-tela-inicial.png) no-repeat center center;
-    width: 100vw;
-    
+    background:  url(../midia/imagem-de-fundo-tela-inicial.png) no-repeat center center;
+    background-size: contain;
     height: 80vh;
+    max-width: 700px;
+    margin: auto;
 }
 
 /* =============================== Corpo ============================= */
@@ -105,14 +112,16 @@ main{
     justify-content: space-around;
     align-items: start;
     background-color: var(--cor2);
-    margin: 40px auto 0px auto;
+    margin: 0px auto;
     padding: 20px;
-    max-width: 1000px;
     border-radius: 10px;
 }
 
 /*======================= Filtro ===================*/
 #secao-filtro{
+    position: absolute;
+    left: 0;
+
     background-color: var(--cor3);
     border-radius: 10px;
 
@@ -147,16 +156,22 @@ h2{
 
 /*======================= Sobre ===================*/
 #secao-sobre{
-    text-align: justify;
-    padding: 40px;
     background-color: white;
-    margin: auto;
-    max-width: 800px;
-
+    margin-top: 40px
 }
 #secao-sobre h2{
+    padding: 40px;
+    color: var(--cor1);
+    background-color: var(--cor3);
     text-align: center;
-    padding: 10px;
+    font: bold 20pt helvetica;
+}
+#secao-sobre p{
+    text-align: justify;
+    padding: 40px 15px;
+    max-width: 600px;
+    margin: auto;
+    font: normal 18pt arial;
 }
 
 /* =============================== Rodapé =========================== */
@@ -164,7 +179,7 @@ h2{
 footer{
     position: relative;
     margin-top: 30px;
-    background-color: var(--cor2);
+    background-color: var(--cor3);
     text-align: center;
     padding: 10px;
 }
