@@ -1,0 +1,85 @@
+@import "./main.css";
+
+/* =============================== Topo ============================= */
+
+#secao-topo{
+    background:  url(../../midia/imagem-de-fundo-tela-inicial.png) no-repeat center center;
+    background-size: contain;
+    height: 80vh;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* =============================== Corpo ============================= */
+main{
+    
+    display: flex;
+    gap: 5px;
+    justify-content: space-around;
+    align-items: start;
+    background-color: var(--cor2);
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/*======================= Mapa ===================*/
+#secao-mapa{
+    background-color: var(--cor1);
+    padding: 5px;
+    border-radius: 10px;
+    position: relative;
+}
+#imagem-mapa{
+    width: 100%;
+    border-radius: 10px;
+}
+h2{
+    font: 680 18pt arial;
+}
+
+/*======================= Filtro ===================*/
+
+#secao-filtro{
+    position: absolute;
+    top: 0;
+    background-color: black;
+    border-radius: 0px;
+
+    display: block; /*oculto*/
+}
+#formulario{
+    padding: 10px; 
+    background-color: var(--cor3);
+}
+#secao-filtro ul{
+    background-color: var(--cor1);
+    padding: 10px;
+    background-color: var(--cor3);
+}
+#secao-filtro li{
+    list-style-type: none;
+    padding: 10px;
+}
+
+
+
+/*======================= Sobre ===================*/
+#secao-sobre{
+    background-color: white;
+    margin-top: 40px
+}
+#secao-sobre h2{
+    padding: 40px;
+    color: var(--cor1);
+    background-color: var(--cor3);
+    text-align: center;
+    font: bold 20pt helvetica;
+}
+#secao-sobre p{
+    text-align: justify;
+    padding: 40px 15px;
+    max-width: 600px;
+    margin: auto;
+    font: normal 18pt arial;
+}

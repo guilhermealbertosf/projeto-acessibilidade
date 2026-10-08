@@ -6,8 +6,8 @@
 
 
     <link rel="shortcut icon" href="midia/logo-com-texto.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="estilos/style.css">
-    <link rel="stylesheet" href="estilos/mobile.css" media="screen and (max-width: 850px)">
+    <link rel="stylesheet" href="estilos/desktop/tela-index.css">
+    <link rel="stylesheet" href="estilos/mobile/tela-index.css" media="screen and (max-width: 850px)">
 
     <title>Enlace Digital</title>
 
@@ -24,11 +24,11 @@
         </div>
         <nav id="navbar">
             <a href="#">Escolas</a>
-            <a href="#">Avaliações</a>
+            <a href="./tela-cadastrados.html">Avaliações</a>
             <a href="#">Sobre</a>
             <a href="#">Cadastro</a>
             <a class="botao-mapa" href="#" onclick="aviso()">Mapa</a>
-        </nav> 
+        </nav>
         <a href="#">
             <span onclick="aviso()" id="icone-menu" class="material-symbols-outlined">
                 menu
@@ -39,40 +39,43 @@
     </div>
     
     
-    <!-- ================= Filtro =================== -->
     <main>
-        <div id="secao-filtro">
-
-            <form class="formulario" id="formulario" action="">
-
-                <h2 class="titulo">Filtrar escolas</h2>
-
-                <input type="text" name="search-bar" id="search-bar" class="search-bar">
-
-                <input class="botao-filtrar" type="button" value="Filtrar">
-            </form>
-
-            <ul>
-                <li>
-                    <p>Deficiencia auditiva</p>
-                    <img src="" alt="icone deficiência auditiva">
-                </li>
-                <li>
-                    <p>Deficiencia Visual</p>
-                    <img src="" alt="icone deficiência visual">
-                </li>
-            </ul>
+        
+        
+        <!-- ================= Mapa =================== -->
+        <div id="secao-mapa">
+            <h2>Mapa de acessibilidade</h2>
+            <img  id="imagem-mapa" src="midia/imagem-mapa.webp" alt="Imagem de mapa das escolas com acessibilidade.">
+            <p>Encontre a escola com melhor acessibilidade para necessidades específicas.</p>
+            
+            <!-- ================= Filtro =================== -->
+            <div id="secao-filtro">
+        
+                <form class="formulario" id="formulario" action="">
+        
+                    <h2 class="titulo">Filtrar escolas</h2>
+        
+                    <input type="text" name="search-bar" id="search-bar" class="search-bar">
+        
+                    <input class="botao-filtrar" type="button" value="Filtrar">
+                </form>
+        
+                <ul>
+                    <li>
+                        <p>Deficiência auditiva</p>
+                        <img src="" alt="icone deficiência auditiva">
+                    </li>
+                    <li>
+                        <p>Deficiência Visual</p>
+                        <img src="" alt="icone deficiência visual">
+                    </li>
+                </ul>
+            </div>
+            
+            
         </div>
-
-
-<!-- ================= Mapa =================== -->
-    <div id="secao-mapa">
-        <h2>Mapa de acessibilidade</h2>
-        <img  id="imagem-mapa" src="midia/imagem-mapa.webp" alt="Imagem de mapa das escolas com acessibilidade.">
-        <p>Encontre a escola com melhor acessibilidade para necessidades específicas.</p>
-    </div>
     </main>
-  
+    
 <!-- ================= Mapa =================== -->
         <div id="secao-sobre" class="secao-sobre">
             <h2>Sobre nossa iniciativa</h2>
