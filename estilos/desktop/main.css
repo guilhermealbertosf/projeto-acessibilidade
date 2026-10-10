@@ -1,0 +1,129 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    /*
+    font-family: 'Jomhuria';
+    font-width: 400px;
+    font-style: regular;
+    font-size: 1.2em;
+    */
+}
+:root{
+    --cor1: #ffffff;
+    --cor2: #e56d3f;
+    --cor3: #813ef5;
+    --cor4: #f3831a; 
+    --cor5: #965df7;
+
+    --fonte-logo: arial;
+    --fonte-titulo: serif;
+    --fonte-subtitulo: arial;
+    --font-conteudo: arial;
+    --fonte-especial: arial;
+}
+
+
+
+body{
+    background: linear-gradient(90deg, #ffffff, #8080807c);
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h2{
+    font: 680 18pt arial;
+}
+
+/* =========================== Cabeçalho ============================= */
+
+header{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0px;
+    background-color: var(--cor3);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    transition-duration: 2s;
+}
+header div#conteiner-logo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+}
+
+header h1{
+    font-family: var(--fonte-titulo);
+}
+header #logo{
+    width: 72px;
+    background-color: var(--cor1);
+    border-radius: 50%;
+
+}
+
+header #navbar {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+header #navbar a{
+    padding: 5px 10px;
+    min-width: 32px;
+    max-height: 30px;
+    font-weight: 700;
+}
+header #navbar a:hover{
+    background-color: #f860f863;
+    border-radius: 6px 0 6px 6px;
+    color: var(--cor1);
+    font-weight: bolder;
+    transition-duration: 0.3s;
+}
+header #navbar a:active{
+    background-color: var(--cor3);
+}
+header .botao-mapa{
+    background-color: white;
+    color: var(--cor3);
+    border-radius: 20px;
+    border: 1.5px solid #ffffff;
+    width: 67px;
+    order: 0;
+}
+
+header #icone-menu{
+    display: none;
+}
+
+/* =============================== Rodapé =========================== */
+
+footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    margin-top: 30px;
+    background-color: var(--cor3);
+    text-align: center;
+    padding: 10px;
+    color: var(--cor1);
+    font-weight: bold;
+}
+footer img{
+    max-width: 40px;
+}
