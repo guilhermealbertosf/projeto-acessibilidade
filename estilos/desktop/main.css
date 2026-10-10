@@ -13,7 +13,16 @@
     --cor1: #ffffff;
     --cor2: #e56d3f;
     --cor3: #813ef5;
+    --cor4: #f3831a; 
+    --cor5: #965df7;
+
+    --fonte-logo: arial;
+    --fonte-titulo: serif;
+    --fonte-subtitulo: arial;
+    --font-conteudo: arial;
+    --fonte-especial: arial;
 }
+
 
 
 body{
@@ -51,7 +60,7 @@ header div#conteiner-logo{
 }
 
 header h1{
-    font-family: serif;
+    font-family: var(--fonte-titulo);
 }
 header #logo{
     width: 72px;
@@ -102,8 +111,19 @@ footer{
     position: fixed;
     width: 100%;
     bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
     margin-top: 30px;
     background-color: var(--cor3);
     text-align: center;
     padding: 10px;
+    color: var(--cor1);
+    font-weight: bold;
+}
+footer img{
+    max-width: 40px;
 }

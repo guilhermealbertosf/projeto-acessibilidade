@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link rel="shortcut icon" href="midia/logo-com-texto.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="midia/logos/logo-com-texto.jpg" type="image/x-icon">
     <link rel="stylesheet" href="estilos/desktop/tela-index.css">
     <link rel="stylesheet" href="estilos/mobile/tela-index.css" media="screen and (max-width: 850px)">
 
@@ -19,15 +19,15 @@
 <body>
     <header>
         <div id="conteiner-logo">
-            <img id="logo" class="logo" src="midia/logo-branca.png" alt="imagem referente à logo da plataforma">
+            <img id="logo" class="logo" src="midia/logos/logo-branca.png" alt="imagem referente à logo da plataforma">
             <h1>Enlace Digital</h1>
         </div>
         <nav id="navbar">
-            <a href="#">Escolas</a>
-            <a href="./tela-cadastrados.html">Avaliações</a>
+            <a href="#">Inicio</a>
             <a href="#">Sobre</a>
-            <a href="#">Cadastro</a>
-            <a class="botao-mapa" href="#" onclick="aviso()">Mapa</a>
+            <a href="templates/escolas.html">Escolas</a>
+            <a href="templates/avaliacoes.html">Avaliações</a>
+            <a class="botao-mapa" href="templates/cadastro.html">Cadastro</a>
         </nav>
         <a href="#">
             <span onclick="aviso()" id="icone-menu" class="material-symbols-outlined">
@@ -39,46 +39,55 @@
     </div>
     
     
-    <main>
-        
-        
+    <main> 
         <!-- ================= Mapa =================== -->
         <div id="secao-mapa">
-            <h2>Mapa de acessibilidade</h2>
-            <img  id="imagem-mapa" src="midia/imagem-mapa.webp" alt="Imagem de mapa das escolas com acessibilidade.">
-            <p>Encontre a escola com melhor acessibilidade para necessidades específicas.</p>
+            <div id="conteiner-mapa">
+                <h2>Mapa de acessibilidade</h2>
+                <p>Acesse nosso mapa e encontre a escola com melhor acessibilidade para necessidades específicas.</p>
+
+                <!--  mapa das escolas com acessibilidade        -->
+                <iframe id="mapa-acessibilidade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d987.5939344859021!2d-34.871678378810714!3d-8.063102310359325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18a48f03c145%3A0xef4ac38fd080a24!2sPra%C3%A7a%20do%20Marco%20Zero!5e0!3m2!1spt-BR!2sbr!4v1791672132183!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
             
             <!-- ================= Filtro =================== -->
             <div id="secao-filtro">
-        
                 <form class="formulario" id="formulario" action="">
-        
-                    <h2 class="titulo">Filtrar escolas</h2>
-        
-                    <input type="text" name="search-bar" id="search-bar" class="search-bar">
-        
-                    <input class="botao-filtrar" type="button" value="Filtrar">
+                    <h2 class="titulo">FILTRAR ESCOLAS</h2>
+                    <div class="conteiner-search-bar" id="conteiner-search-bar">
+                        <input type="text" name="search-bar" id="search-bar" class="search-bar" placeholder="Ex.: Deficiência visual">
+                        <svg onclick="aviso()" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+                    </div>
+                    <ul>
+                        <li>
+                            <p>Deficiência Física</p>
+                            <img src="midia/icones-pcd/icone-deficiencia-fisica.png" alt="icone deficiência física">
+                        </li>
+                        <li>
+                            <p>Deficiência Visual</p>
+                            <img src="midia/icones-pcd/icone-deficiencia-visual.png" alt="icone deficiência visual">
+                        </li>
+                        <li>
+                            <p>Deficiência auditiva</p>
+                            <img src="midia/icones-pcd/icone-deficiencia-auditiva.png" alt="icone deficiência auditiva">
+                        </li>
+                        <li>
+                            <p>Deficiência Intelectual</p>
+                            <img src="midia/icones-pcd/icone-deficiencia-intelectual.jpeg" alt="icone deficiência intelectual">
+                        </li>
+                        <li>
+                            <p>Deficiência Psicossocial</p>
+                            <img src="midia/icones-pcd/icone-deficiencia-psicossocial.png" alt="icone deficiência psicossocial">
+                        </li>
+                    </ul>
                 </form>
-        
-                <ul>
-                    <li>
-                        <p>Deficiência auditiva</p>
-                        <img src="" alt="icone deficiência auditiva">
-                    </li>
-                    <li>
-                        <p>Deficiência Visual</p>
-                        <img src="" alt="icone deficiência visual">
-                    </li>
-                </ul>
-            </div>
-            
-            
+            </div>   
         </div>
     </main>
     
 <!-- ================= Mapa =================== -->
         <div id="secao-sobre" class="secao-sobre">
-            <h2>Sobre nossa iniciativa</h2>
+            <h2>SOBRE NOSSA INICIATIVA</h2>
 
             <p>
                 O Enlace Digital foi desenvolvido pensando em pessoas com deficiência (PCD) e suas famílias, principalmente nas etapas iniciais da escola onde enfrentam dificuldades para encontrar ambientes com acessibilidade específica para suas necessidades.
@@ -91,9 +100,10 @@
 
 
     <footer>
+        <img src="midia/logos/logo-preta.png" alt="">
         <p>
-            &copy; Equipe 5 - todos os direitos reservados
-        </p> 
+            Mais oportunidades, um futuro para todos!
+        </p>
     </footer>
 
     <script src="scripts/script.js"></script>
