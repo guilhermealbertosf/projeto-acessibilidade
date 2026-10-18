@@ -1,0 +1,345 @@
+/* ==========================================================================
+   COMPONENTES
+   Peças reutilizadas em várias partes da página:
+   botões, cartões, notas, etiquetas, ícones e formulário.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   Botões
+   .botao                      -> roxo (padrão)
+   .botao .botao-destaque      -> laranja (ação principal)
+   -------------------------------------------------------------------------- */
+.botao {
+  display: inline-block;
+  min-height: 48px;
+  padding: 12px 28px;
+  border: 0;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #5B3A9D, var(--roxo));
+  box-shadow: 0 10px 24px rgba(74, 46, 128, .35);
+  color: #fff;
+
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.botao:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(74, 46, 128, .42);
+}
+
+.botao-destaque {
+  background: linear-gradient(135deg, #E27A35, var(--laranja));
+  box-shadow: 0 10px 24px rgba(217, 107, 39, .4);
+  color: var(--texto);
+  font-size: 20px;
+}
+
+
+/* --------------------------------------------------------------------------
+   Cartões
+   .cartao                -> caixa branca arredondada
+   .cartao .destaque      -> igual, com o tracinho laranja no topo
+   .vidro                 -> caixa translúcida (efeito de vidro)
+   -------------------------------------------------------------------------- */
+.cartao {
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, .9);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 18px 40px rgba(33, 37, 41, .08),
+    0 2px 6px rgba(33, 37, 41, .04);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.cartao:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 50px rgba(74, 46, 128, .16);
+}
+
+/* Tracinho laranja no topo do cartão */
+.destaque {
+  position: relative;
+}
+
+.destaque::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 56px;
+  height: 5px;
+  border-radius: 0 0 6px 6px;
+  background: var(--laranja);
+}
+
+/* Cartão inteiro clicável (usado nas necessidades) */
+.link-bloco {
+  display: block;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.vidro {
+  padding: 16px 20px;
+  border: 1px solid rgba(255, 255, 255, .85);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .7);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 32px rgba(33, 37, 41, .12);
+}
+
+
+/* --------------------------------------------------------------------------
+   Barra de nota
+   Uso:  <div class="barra-nota">
+           <span>Rampas</span>
+           <i><b style="--largura: 92%"></b></i>
+           <strong>4,6</strong>   (ou "Sim"/"Não" para itens do Censo, com 100% ou 0%)
+         </div>
+   O número depois de --largura define o tamanho da barra colorida.
+   (nota 4,6 de 5 = 92%)
+   deixa pra lá kkkskkskkk
+   -------------------------------------------------------------------------- */
+.barra-nota {
+  display: grid;
+  grid-template-columns: 200px 1fr 44px;
+  gap: 12px;
+  align-items: center;
+  margin: 10px 0;
+}
+
+/* Trilho (parte cinza-roxa) */
+.barra-nota i {
+  display: block;
+  height: 14px;
+  border-radius: 7px;
+  background: rgba(74, 46, 128, .1);
+  overflow: hidden;
+}
+
+/* Parte preenchida (laranja) */
+.barra-nota b {
+  display: block;
+  width: var(--largura);
+  height: 100%;
+  border-radius: 7px;
+  background: linear-gradient(90deg, var(--laranja), #EB9150);
+}
+
+.barra-nota strong {
+  text-align: right;
+}
+
+
+/* --------------------------------------------------------------------------
+   Etiquetas, ícones, números e selos
+   -------------------------------------------------------------------------- */
+
+/* Etiqueta arredondada: "Rampas", "Libras"... */
+.etiqueta {
+  display: inline-block;
+  margin: 0 8px 8px 0;
+  padding: 3px 14px;
+  border-radius: 999px;
+  background: rgba(74, 46, 128, .1);
+  color: var(--roxo);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Quadradinho roxo com o desenho de cada necessidade */
+.icone {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 14px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, var(--roxo-claro), var(--roxo));
+  box-shadow: 0 10px 20px rgba(74, 46, 128, .3);
+}
+
+.icone svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Bolinha com a posição da escola na lista (1, 2, 3...) */
+.numero {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: var(--roxo);
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Faixa colorida no topo do cartão da escola (guarda a arte e a nota) */
+.arte {
+  position: relative;
+  height: 120px;
+  margin-bottom: 16px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--roxo), #7A55C4);
+  overflow: hidden;
+}
+
+.arte svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Selo laranja com a nota (fica no canto da .arte) */
+.selo {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 16px;
+  border-radius: 999px;
+  background: var(--laranja);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .25);
+  color: var(--texto);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Selo que não fica preso ao canto */
+.selo-solto {
+  position: static;
+}
+
+
+/* --------------------------------------------------------------------------
+   Formulários e listas que abrem e fecham
+   -------------------------------------------------------------------------- */
+
+/* Uma linha de pergunta: "Rampas e acessos   1 2 3 4 5" */
+.linha-nota {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 14px 0;
+  border: 0;
+  border-top: 1px solid rgba(74, 46, 128, .12);
+}
+
+/* A legenda existe para leitores de tela; quem enxerga vê o .rotulo */
+.linha-nota legend {
+  display: none;
+}
+
+.linha-nota .rotulo {
+  font-weight: 700;
+}
+
+/* Botão de opção (o número 1 a 5, ou uma etiqueta clicável).
+   O <input> de verdade fica invisível por cima do desenho. */
+.opcao {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.opcao input {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  opacity: 0;
+}
+
+.opcao span {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid rgba(74, 46, 128, .35);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .9);
+  box-shadow: 0 4px 10px rgba(33, 37, 41, .06);
+  color: var(--roxo);
+  font-weight: 700;
+}
+
+/* Opção marcada */
+.opcao input:checked + span {
+  border-color: var(--roxo);
+  background: var(--roxo);
+  color: #fff;
+}
+
+/* Opção selecionada pelo teclado */
+.opcao input:focus-visible + span {
+  outline: 3px solid var(--roxo);
+  outline-offset: 3px;
+}
+
+/* Versão em formato de pílula (filtro de necessidade) */
+.opcao.pilula {
+  margin: 0 8px 8px 0;
+}
+
+.opcao.pilula span {
+  width: auto;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+}
+
+select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 12px;
+  border: 2px solid rgba(74, 46, 128, .35);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .9);
+  font: inherit;
+}
+
+label.campo {
+  display: block;
+  margin: 12px 0 4px;
+  font-weight: 700;
+}
+
+/* "Mais adaptações", "Endereço e contato"... */
+details {
+  border-top: 1px solid rgba(74, 46, 128, .12);
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  color: var(--roxo);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Mensagem que aparece depois de enviar a avaliação */
+.agradecimento {
+  margin-top: 16px;
+  font-weight: 700;
+  color: var(--roxo);
+}
