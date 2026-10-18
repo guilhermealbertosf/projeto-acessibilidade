@@ -1,0 +1,253 @@
+/* ==========================================================================
+   SEÇÕES (versão computador)
+   Um bloco para cada parte da landing page, na ordem em que aparecem:
+
+   1. Início
+        1.1 Topo (título + imagem)
+        1.2 Comece pela necessidade
+        1.3 Genérico ou específico?
+        1.4 Escolas em destaque
+        1.5 Chamada para avaliar
+   2. Achar escola (filtro, lista e mapa)
+        2.1 Página da escola
+        2.2 Avaliar escola (formulário)
+   3. Sobre nós
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. INÍCIO
+   ========================================================================== */
+
+/* ----- 1.1 Topo: texto à esquerda, imagem à direita ----- */
+#topo {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding-top: 64px;
+}
+
+#topo h1 {
+  font-size: 48px;
+}
+
+#topo .subtitulo {
+  font-size: 22px;
+}
+
+/* Espaço entre os dois botões */
+#topo .botao + .botao {
+  margin-left: 8px;
+}
+
+/* Imagem da família: aparece só no computador */
+#imagem-familia {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* A ilustração com o cartão da escola em destaque só aparece no celular.
+   Os estilos dela estão no mobile.css. */
+#ilustracao {
+  display: none;
+}
+
+
+/* ----- 1.2 Comece pela necessidade: cinco cartões lado a lado ----- */
+.necessidades {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.necessidades p {
+  margin: 0;
+}
+
+
+/* ----- 1.3 Genérico ou específico?: dois cartões ----- */
+.comparacao {
+  grid-template-columns: 1fr 1fr;
+}
+
+.comparacao .citacao {
+  margin: 0;
+  font-size: 22px;
+}
+
+
+/* ----- 1.4 Escolas em destaque: três cartões de escola ----- */
+.escolas-destaque {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* ----- 1.5 Chamada para avaliar ----- */
+#chamada {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+#chamada h2,
+#chamada p {
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   2. ACHAR ESCOLA
+   ========================================================================== */
+
+/* Filtro: necessidade + município */
+#filtro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+#filtro select {
+  width: 220px;
+  margin-bottom: 8px;
+}
+
+/* Frase "5 escolas com Libras..." acima da lista */
+.resumo-busca {
+  margin: 0;
+}
+
+.opcoes-necessidade {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Lista de escolas à esquerda (500px) e mapa à direita */
+.busca {
+  grid-template-columns: 500px 1fr;
+  align-items: start;
+}
+
+/* O mapa acompanha a rolagem enquanto a lista passa */
+#mapa {
+  position: sticky;
+  top: var(--altura-cabecalho);
+  padding: 0;
+  overflow: hidden;
+}
+
+#mapa svg {
+  display: block;
+  width: 100%;
+}
+
+/* Cartão de vidro em cima do mapa */
+#mapa .vidro {
+  position: relative;
+  
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+
+/* ----- 2.1 Página da escola ----- */
+
+/* Faixa roxa com o nome, a nota e o botão de avaliar */
+#escola-topo {
+  position: relative;
+  padding: 44px;
+  border-radius: 40px;
+  background: linear-gradient(145deg, var(--roxo), var(--roxo-claro) 70%, #8A66CC);
+  box-shadow: 0 36px 70px rgba(74, 46, 128, .34);
+  overflow: hidden;
+}
+
+/* Desenho decorativo no canto direito */
+#escola-topo > svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
+#escola-topo > div {
+  position: relative;
+}
+
+#escola-topo,
+#escola-topo a,
+#escola-topo h2,
+#escola-topo p {
+  color: #fff;
+}
+
+#escola-topo h2 {
+  font-size: 46px;
+}
+
+/* Caixinha de vidro com o índice (5 de 10 itens) */
+#escola-topo .vidro {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 0 24px;
+}
+
+#escola-topo .vidro,
+#escola-topo .vidro * {
+  color: var(--texto);
+}
+
+#escola-topo .nota {
+  color: var(--roxo);
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Notas à esquerda (2/3) e informações extras à direita (1/3) */
+.detalhe {
+  grid-template-columns: 2fr 1fr;
+  align-items: start;
+  margin-top: 32px;
+}
+
+.detalhe .cartao > details:first-child {
+  border: 0;
+}
+
+/* Frase pequena no fim de um cartão (a fonte dos dados, ex.: "Censo Escolar 2025") */
+.detalhe .aviso {
+  margin-top: 16px;
+}
+
+
+/* ----- 2.2 Avaliar escola ----- */
+#avaliar .voltar {
+  margin-bottom: 16px;
+}
+
+#avaliar form .suave {
+  margin-top: 16px;
+}
+
+
+/* ==========================================================================
+   3. SOBRE NÓS
+   ========================================================================== */
+#sobre .introducao {
+  font-size: 22px;
+}
+
+.sobre-grade {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 32px;
+}
