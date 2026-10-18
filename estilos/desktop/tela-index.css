@@ -141,3 +141,7 @@ main{
     font: normal 18pt arial;
     background-color: rgba(46, 29, 145, 0.051);
 }
+
+#selecionado {
+    border-bottom: 4px solid var(--cor2);
+}
