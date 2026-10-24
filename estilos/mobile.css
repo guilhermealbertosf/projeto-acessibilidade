@@ -1,0 +1,214 @@
+/* ==========================================================================
+   Se ligaa cabrito: CELULAR E TABLET PEQUENO (telas até 850px)
+   Este arquivo só é carregado em telas pequenas (veja o <link> no index.html).
+   Ele não repete tudo: só troca o que precisa ser diferente do computador.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   Geral
+   -------------------------------------------------------------------------- */
+body {
+  font-size: 17px;
+}
+
+h1,
+.titulo-secao {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+/* Margens laterais menores */
+.conteiner {
+  padding: 0 16px;
+}
+
+.secao {
+  padding-top: 56px;
+}
+
+/* Tudo vira uma coluna só */
+.grade {
+  grid-template-columns: 1fr;
+}
+
+
+/* --------------------------------------------------------------------------
+   Cabeçalho e menu
+   O menu fica escondido e abre ao tocar no botão (veja scripts/script.js)
+   -------------------------------------------------------------------------- */
+header {
+  padding: 10px 16px;
+}
+
+#icone-menu {
+  display: block;
+  order: 2;
+}
+
+#conteiner-logo {
+  margin-right: auto;
+}
+
+#logo {
+  height: 34px;
+}
+
+.botao-entrar {
+  order: 1;
+  min-height: 40px;
+  padding: 6px 20px;
+}
+
+#navbar {
+  display: none;
+  order: 3;
+  width: 100%;
+}
+
+#navbar.aberto {
+  display: flex;
+  flex-direction: column;
+}
+
+#navbar a {
+  margin: 0;
+  padding: 14px 4px;
+}
+
+
+/* --------------------------------------------------------------------------
+   Início: no celular a imagem da família some e entra a ilustração
+   -------------------------------------------------------------------------- */
+#topo {
+  padding: 32px 0 48px;
+}
+
+.topo-conteudo {
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+#topo h1 {
+  font-size: 30px;
+}
+
+#topo .subtitulo {
+  font-size: 19px;
+}
+
+/* Botões ocupam a largura toda, um embaixo do outro */
+#topo .botao {
+  display: block;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+#topo .botao + .botao {
+  margin-left: 0;
+}
+
+#imagem-familia {
+  display: none;
+}
+
+/* Ilustração roxa com o cartão da escola em destaque (Alto do Pascoal) */
+#ilustracao {
+  position: relative;
+  display: block;
+  height: 380px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, var(--roxo) 0%, var(--roxo-claro) 60%, #8A6CCB 100%);
+  box-shadow: 0 36px 70px rgba(83, 56, 134, .38);
+  overflow: hidden;
+}
+
+/* Desenho de fundo */
+#ilustracao > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Cartões de vidro em cima da ilustração */
+#ilustracao .vidro {
+  position: absolute;
+  left: 24px;
+}
+
+#ilustracao .vidro.topo {
+  top: 24px;
+}
+
+#ilustracao .vidro.base {
+  right: 24px;
+  bottom: 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#chamada .botao {
+  width: 100%;
+  text-align: center;
+}
+
+
+/* --------------------------------------------------------------------------
+   Barras de nota e formulário
+   -------------------------------------------------------------------------- */
+.barra-nota {
+  grid-template-columns: 130px 1fr 40px;
+}
+
+/* O nome da pergunta ocupa uma linha, e os números vão para baixo */
+.linha-nota .rotulo {
+  width: 100%;
+}
+
+.opcao:first-child {
+  margin-left: 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   Achar escola e página da escola
+   -------------------------------------------------------------------------- */
+#filtro select {
+  width: 100%;
+}
+
+.barra-busca {
+  grid-template-columns: 1fr;
+}
+
+#destaques {
+  padding: 24px 16px;
+}
+
+#escola-topo {
+  grid-template-columns: 1fr;
+  padding: 16px;
+  border-radius: 28px;
+}
+
+#escola-topo h2 {
+  font-size: 30px;
+}
+
+.escola-mapa {
+  grid-template-columns: 1fr;
+}
+
+
+/* --------------------------------------------------------------------------
+   Rodapé
+   -------------------------------------------------------------------------- */
+footer {
+  padding: 28px 16px;
+}

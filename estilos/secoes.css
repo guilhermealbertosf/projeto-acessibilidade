@@ -1,0 +1,443 @@
+/* ==========================================================================
+   SEÇÕES (versão computador)
+   Um bloco para cada parte da landing page, na ordem em que aparecem:
+
+   1. Início
+        1.1 Topo (título + imagem)
+        1.2 Comece pela necessidade
+        1.3 Chamada para avaliar
+        1.4 Bem avaliadas de cada região
+   2. Achar escola (filtro e lista)
+        2.1 Página da escola
+        2.2 Avaliar escola (formulário)
+   3. Sobre nós
+
+   "Isso é suficiente"
+
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. INÍCIO
+   ========================================================================== */
+
+/* ----- 1.1 Topo: faixa roxa de ponta a ponta, texto à esquerda e imagem à direita ----- */
+#topo {
+  position: relative;
+  padding: 56px 0 88px;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--roxo-escuro) 0%, var(--roxo) 55%, var(--roxo-claro) 100%);
+  color: #fff;
+}
+
+/* Forma clara na diagonal, no canto de baixo */
+#topo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, .08);
+  clip-path: polygon(58% 100%, 100% 22%, 100% 100%);
+}
+
+#topo :focus-visible {
+  outline-color: #fff;
+}
+
+.topo-conteudo {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+#topo h1 {
+  color: #fff;
+  font-size: 48px;
+}
+
+#topo .subtitulo {
+  margin-bottom: 28px;
+  color: rgba(255, 255, 255, .9);
+  font-size: 22px;
+}
+
+/* Espaço entre os dois botões */
+#topo .botao + .botao {
+  margin-left: 8px;
+}
+
+/* Imagem da família: aparece só no computador */
+#imagem-familia {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* A ilustração com o cartão da escola em destaque só aparece no celular.
+   Os estilos dela estão no mobile.css. */
+#ilustracao {
+  display: none;
+}
+
+
+/* ----- 1.2 Comece pela necessidade: cinco cartões roxos lado a lado ----- */
+.necessidades {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.necessidades .cartao {
+  padding: 20px;
+  border: 0;
+  background: linear-gradient(150deg, var(--roxo), var(--roxo-claro));
+  color: #fff;
+}
+
+.necessidades h3 {
+  color: #fff;
+}
+
+.necessidades p {
+  margin: 0;
+  color: rgba(255, 255, 255, .9);
+  font-size: 14px;
+}
+
+.necessidades .icone {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(33, 20, 66, .5);
+  box-shadow: none;
+}
+
+
+/* ----- 1.3 Chamada para avaliar ----- */
+#chamada {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+#chamada h2,
+#chamada p {
+  margin: 0;
+}
+
+
+/* ----- 1.4 Bem avaliadas de cada região: painel roxo com três cartões ----- */
+#destaques {
+  padding: 36px 40px 44px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, var(--roxo-escuro), var(--roxo) 45%, var(--roxo-claro));
+  box-shadow: 0 30px 60px rgba(83, 56, 134, .3);
+}
+
+#destaques h2 {
+  color: #fff;
+}
+
+#destaques > .suave {
+  color: rgba(255, 255, 255, .9);
+}
+
+.escolas-destaque {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 24px;
+}
+
+#destaques .cartao {
+  background: var(--fundo);
+}
+
+
+/* ==========================================================================
+   2. ACHAR ESCOLA
+   ========================================================================== */
+
+/* Filtro: necessidade + bairro */
+#filtro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.opcoes-necessidade {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Seletor de bairro (botão cinza-lilás do Figma) */
+#filtro select {
+  width: 200px;
+  min-height: 44px;
+  margin-bottom: 8px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(#F1EEF6, #D3CCE1);
+  box-shadow: 0 4px 10px rgba(33, 37, 41, .15);
+  font-weight: 700;
+}
+
+/* Aba "Escolas" pendurada embaixo do filtro */
+.aba-escolas {
+  display: inline-block;
+  margin: 0 0 24px 40px;
+  padding: 12px 44px;
+  border-radius: 0 0 18px 18px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(33, 37, 41, .12);
+  color: var(--roxo);
+  font-weight: 700;
+}
+
+/* Frase "5 escolas com..." à esquerda e campo de busca à direita */
+.barra-busca {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.resumo-busca {
+  margin: 0;
+  font-size: 16px;
+}
+
+.campo-busca {
+  position: relative;
+  display: block;
+}
+
+.campo-busca svg {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--texto-suave);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.campo-busca input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 20px 0 52px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(33, 37, 41, .14);
+  font: inherit;
+  font-size: 16px;
+}
+
+/* Lista: três cartões por linha */
+.escolas-lista {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+
+/* ----- 2.1 Página da escola ----- */
+
+/* Moldura clara com as informações à esquerda e o mapa roxo à direita */
+#escola-topo {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, .75);
+  box-shadow: 0 30px 60px rgba(83, 56, 134, .18);
+}
+
+.escola-info {
+  padding: 24px 16px;
+}
+
+.escola-info h2 {
+  font-size: 42px;
+}
+
+.migalhas {
+  font-size: 16px;
+  color: var(--texto-suave);
+}
+
+/* Caixa com o índice (5 de 10 itens) */
+.nota-caixa {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: fit-content;
+  margin: 20px 0 28px;
+  padding: 10px 20px;
+  border: 1.5px solid var(--roxo);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.nota-caixa .nota {
+  color: var(--roxo);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Painel roxo com a imagem do mapa e o endereço */
+.escola-mapa {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 280px) 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 36px 28px 28px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, var(--roxo-escuro), var(--roxo) 50%, var(--roxo-claro));
+  color: #fff;
+}
+
+.escola-mapa::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 72px;
+  height: 6px;
+  border-radius: 0 0 6px 6px;
+  background: var(--laranja);
+}
+
+.escola-mapa img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+}
+
+.escola-mapa h3,
+.escola-mapa p {
+  color: #fff;
+}
+
+.escola-mapa .suave {
+  color: rgba(255, 255, 255, .85);
+}
+
+/* Notas à esquerda (2/3) e informações extras à direita (1/3) */
+.detalhe {
+  grid-template-columns: 2fr 1fr;
+  align-items: start;
+  margin-top: 32px;
+}
+
+.detalhe .cartao > details:first-child {
+  border: 0;
+}
+
+/* Frase pequena no fim de um cartão (a fonte dos dados, ex.: "Censo Escolar 2025") */
+.detalhe .aviso {
+  margin-top: 16px;
+}
+
+
+/* ----- 2.2 Avaliar escola: painel roxo com estrelas ----- */
+#avaliar .voltar {
+  margin-bottom: 16px;
+}
+
+.painel-avaliacao {
+  margin-top: 24px;
+  padding: 36px 32px 32px;
+  border-radius: 28px;
+  background: linear-gradient(120deg, var(--roxo-escuro), var(--roxo) 55%, var(--roxo-claro));
+  box-shadow: 0 30px 60px rgba(83, 56, 134, .3);
+  color: #fff;
+}
+
+.painel-avaliacao :focus-visible {
+  outline-color: #fff;
+}
+
+.painel-avaliacao h3 {
+  margin-bottom: 12px;
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+}
+
+.painel-avaliacao .linha-nota {
+  padding: 10px 0;
+  border-top: 0;
+}
+
+.aviso-avaliacao {
+  max-width: 46ch;
+  margin: 16px auto 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.aviso-avaliacao a {
+  color: #fff;
+}
+
+.painel-avaliacao .botao {
+  display: block;
+  margin: 24px auto 0;
+}
+
+.painel-avaliacao .agradecimento {
+  color: #fff;
+  text-align: center;
+}
+
+
+/* ==========================================================================
+   3. SOBRE NÓS
+   ========================================================================== */
+#sobre .introducao {
+  color: var(--texto);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sobre-grade {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 32px;
+}
+
+.sobre-grade .cartao {
+  border: 0;
+  background: linear-gradient(150deg, var(--roxo), #5F44A0);
+  color: #fff;
+}
+
+.sobre-grade h3,
+.sobre-grade .suave {
+  color: #fff;
+}
+
+
+/* ==========================================================================
+   Telas médias (computador pequeno e tablet): menos colunas
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .necessidades {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .escolas-destaque,
+  .escolas-lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
