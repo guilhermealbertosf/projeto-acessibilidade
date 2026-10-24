@@ -1,9 +1,10 @@
 // ==========================================================
 // Enlace Digital — scripts da landing page
-// São só três coisas:
+// São quatro coisas:
 //   1. Abrir e fechar o menu no celular
 //   2. Marcar no menu a seção que está na tela
 //   3. Mostrar um "obrigado" depois de enviar a avaliação
+//   4. Filtrar a lista de escolas por bairro e por nome
 // ==========================================================
 
 
@@ -83,3 +84,39 @@ formulario.addEventListener("submit", function (evento) {
    formulario.reset();
    agradecimento.textContent = "Obrigado! Sua avaliação ajuda a próxima família.";
 });
+
+
+// ----------------------------------------------------------
+// 4. Filtrar a lista de escolas
+// Cada cartão da lista tem data-bairro="...". O bairro escolhido
+// e o texto digitado na busca escondem os cartões que não servem.
+// ----------------------------------------------------------
+const seletorBairro = document.getElementById("bairro");
+const campoBusca = document.getElementById("busca-escola");
+const cartoesDeEscola = document.querySelectorAll("#lista-escolas > article");
+const totalEscolas = document.getElementById("total-escolas");
+const semResultado = document.getElementById("sem-resultado");
+
+// Deixa "Água" e "agua" iguais: tira acentos e maiúsculas
+function simplificar(texto) {
+   return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
+function filtrarEscolas() {
+   const bairro = seletorBairro.value;
+   const busca = simplificar(campoBusca.value.trim());
+   let visiveis = 0;
+
+   cartoesDeEscola.forEach(function (cartao) {
+      const nome = simplificar(cartao.querySelector("h3").textContent);
+      const mostrar = (bairro === "" || cartao.dataset.bairro === bairro) && nome.includes(busca);
+      cartao.hidden = !mostrar;
+      if (mostrar) visiveis++;
+   });
+
+   totalEscolas.textContent = visiveis + (visiveis === 1 ? " escola" : " escolas");
+   semResultado.hidden = visiveis > 0;
+}
+
+seletorBairro.addEventListener("change", filtrarEscolas);
+campoBusca.addEventListener("input", filtrarEscolas);

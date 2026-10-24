@@ -1,0 +1,204 @@
+/* ==========================================================================
+   TELAS DE LOGIN E CADASTRO
+   Vale para paginas/login.html e paginas/cadastro.html.
+   Carregado depois do base.css (que traz as cores e o tamanho da fonte).
+
+   Estrutura: dois lados lado a lado
+     .painel-formulario -> fundo escuro, moldura e cartão roxo com o formulário
+     .painel-imagem     -> foto da sala de aula com a moldura roxa por cima
+   ========================================================================== */
+
+body.pagina-autenticacao {
+  min-height: 100vh;
+  background: #1F1F1F;
+  font-family: 'Lora', Georgia, serif;
+}
+
+.autenticacao {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  min-height: 100vh;
+}
+
+
+/* --------------------------------------------------------------------------
+   Lado esquerdo ptista
+   -------------------------------------------------------------------------- */
+.painel-formulario {
+  display: grid;
+  place-items: center;
+  padding: 40px 24px;
+
+  /* Duas faixas diagonais roxas bem escuras sobre o fundo grafite */
+  background:
+    linear-gradient(160deg, #2A1D45 0 26%, transparent 26%),
+    linear-gradient(20deg, #2B1F47 0 20%, transparent 20%),
+    #1F1F1F;
+}
+
+/* Moldura escura em volta do cartão roxo */
+.moldura {
+  width: min(100%, 630px);
+  padding: 26px;
+  border-radius: 44px;
+  background: rgba(15, 12, 22, .72);
+}
+
+.cartao-auth {
+  position: relative;
+  padding: 28px 72px 56px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #45306E 0%, #6E4FA7 100%);
+  color: #fff;
+}
+
+.cartao-auth :focus-visible {
+  outline-color: #fff;
+}
+
+/* Seta de voltar (canto de cima, à esquerda) */
+.voltar-seta {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+}
+
+.voltar-seta svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.logo-auth {
+  display: block;
+  width: min(270px, 70%);
+  height: auto;
+  margin: 0 auto 48px;
+}
+
+
+/* --------------------------------------------------------------------------
+   Formulário
+   -------------------------------------------------------------------------- */
+.formulario-auth {
+  display: grid;
+  gap: 14px;
+}
+
+.formulario-auth label:not(.so-leitor) {
+  margin-bottom: -6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Campos brancos, bem arredondados, com sombra */
+.formulario-auth input,
+.formulario-auth select {
+  width: 100%;
+  min-height: 58px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, .3);
+  color: var(--texto);
+  font: inherit;
+  font-size: 17px;
+}
+
+.formulario-auth input::placeholder {
+  color: var(--texto-suave);
+}
+
+/* Seletor roxo pequeno ("Selecione") do cadastro */
+.formulario-auth select {
+  width: fit-content;
+  min-height: 40px;
+  padding: 0 40px 0 24px;
+  border-radius: 6px;
+  appearance: none;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E") right 14px center / 12px no-repeat,
+    linear-gradient(180deg, var(--roxo-claro), var(--roxo));
+  color: #fff;
+  font-family: var(--fonte);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.formulario-auth select option {
+  color: var(--texto);
+}
+
+/* Links pequenos entre os campos e o botão */
+.link-auth {
+  justify-self: center;
+  color: #B5A2EE;
+  font-size: 16px;
+}
+
+.formulario-auth .botao {
+  justify-self: center;
+  min-width: 180px;
+  margin-top: 16px;
+  color: #fff;
+  font-family: var(--fonte);
+  font-size: 22px;
+}
+
+
+/* --------------------------------------------------------------------------
+   Lado direito
+   Se a foto "foto-sala-de-aula.jpg" ainda não estiver em midia/conteudo,
+   aparece só o degradê lilás por baixo da moldura.
+   -------------------------------------------------------------------------- */
+.painel-imagem {
+  position: relative;
+  background:
+    url("../midia/conteudo/foto-sala-de-aula.jpg") center / cover no-repeat,
+    linear-gradient(160deg, #CFC6E6, #8E78C2);
+}
+
+.painel-imagem img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* --------------------------------------------------------------------------
+   Celular e tablet pequeno: só o formulário, ocupando a tela
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .autenticacao {
+    grid-template-columns: 1fr;
+  }
+
+  .painel-imagem {
+    display: none;
+  }
+
+  .painel-formulario {
+    padding: 16px 12px;
+  }
+
+  .moldura {
+    padding: 12px;
+    border-radius: 28px;
+  }
+
+  .cartao-auth {
+    padding: 28px 24px 40px;
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar — Enlace Digital</title>
+    <link rel="shortcut icon" href="../midia/logos/logo-com-texto.jpg" type="image/x-icon">
+
+    <!-- Estilos: base (cores e fonte) + componentes (botão) + o que é só destas telas -->
+    <link rel="stylesheet" href="../estilos/base.css">
+    <link rel="stylesheet" href="../estilos/componentes.css">
+    <link rel="stylesheet" href="../estilos/autenticacao.css">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-autenticacao">
+    <main class="autenticacao">
+
+        <!-- Lado esquerdo: formulário -->
+        <section class="painel-formulario">
+            <div class="moldura">
+                <div class="cartao-auth">
+                    <a class="voltar-seta" href="../index.html" aria-label="Voltar para o início">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5M11 5l-7 7 7 7"/></svg>
+                    </a>
+                    <img class="logo-auth" src="../midia/logos/logo-enlace-digital.png" width="511" height="120" alt="Enlace Digital">
+                    <h1 class="so-leitor">Entrar</h1>
+
+                    <form class="formulario-auth" data-destino="../index.html">
+                        <label for="email">e-mail:</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+
+                        <label for="senha">senha:</label>
+                        <input type="password" id="senha" name="senha" autocomplete="current-password" required>
+
+                        <!-- Ainda não existe a tela de recuperação de senha -->
+                        <a class="link-auth" href="#">esqueceu a senha?</a>
+                        <a class="link-auth" href="cadastro.html">não possuo uma conta</a>
+
+                        <button class="botao botao-destaque" type="submit">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lado direito: foto da sala de aula com a moldura roxa por cima (só no computador) -->
+        <aside class="painel-imagem" aria-hidden="true">
+            <img src="../midia/conteudo/moldura-login.png" alt="">
+        </aside>
+
+    </main>
+    <script src="../scripts/autenticacao.js"></script>
+</body>
+</html>

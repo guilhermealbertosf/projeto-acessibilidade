@@ -12,16 +12,17 @@
    Cores e medidas (mude aqui e a página inteira muda)
    -------------------------------------------------------------------------- */
 :root {
-  /* Paleta 60/30/10: fundo claro, roxo e laranja */
+  /* Paleta do Figma: fundo claro #F8F9FA, roxo #533886, laranja #D96B27,
+     texto #212529 e texto com menos destaque #727577 */
   --fundo: #F8F9FA;
-  --roxo: #4A2E80;
-  --roxo-claro: #6B47B0;
-  --roxo-escuro: #3B2367;
+  --roxo: #533886;
+  --roxo-claro: #7D5FBF;
+  --roxo-escuro: #3F2A69;
   --laranja: #D96B27;
 
   /* Textos */
   --texto: #212529;
-  --texto-suave: #495057;
+  --texto-suave: #727577;
 
   /* Fonte pensada para leitura fácil */
   --fonte: 'Atkinson Hyperlegible', system-ui, sans-serif;
@@ -61,9 +62,9 @@ body {
 
   /* Fundo claro com três "manchas" de cor bem suaves pq é bom assim ;*/
   background:
-    radial-gradient(900px 520px at 88% -8%, rgba(74, 46, 128, .16), transparent),
+    radial-gradient(900px 520px at 88% -8%, rgba(83, 56, 134, .16), transparent),
     radial-gradient(700px 420px at -8% 18%, rgba(217, 107, 39, .12), transparent),
-    radial-gradient(800px 500px at 60% 70%, rgba(74, 46, 128, .07), transparent),
+    radial-gradient(800px 500px at 60% 70%, rgba(83, 56, 134, .07), transparent),
     var(--fundo);
 }
 
@@ -104,6 +105,16 @@ h3 { font-size: 20px; margin: 0 0 4px; }
   font-size: 16px;
 }
 
+/* Texto só para leitores de tela (some da vista, mas continua lido) */
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* Desenhos que servem só de molde (o navegador usa, mas não mostra) */
 .molde-svg {
   position: absolute;
@@ -133,9 +144,8 @@ header {
   gap: 8px;
   padding: 10px 48px;
 
-  background: rgba(74, 46, 128, .94);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 10px 30px rgba(74, 46, 128, .28);
+  background: linear-gradient(90deg, var(--roxo-escuro), var(--roxo) 55%, #6A4DAA);
+  box-shadow: 0 10px 30px rgba(83, 56, 134, .28);
   color: #fff;
 }
 
@@ -154,14 +164,12 @@ header :focus-visible {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 22px;
 }
 
 #logo {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--fundo);
+  display: block;
+  width: auto;
+  height: 40px;
 }
 
 /* Menu: Início | Achar escola | Sobre nós */
@@ -174,6 +182,18 @@ header :focus-visible {
 /* Risco laranja no item da seção que está na tela */
 #navbar a[aria-current] {
   border-bottom: 4px solid var(--laranja);
+}
+
+/* Botão "Entrar" do cabeçalho (leva para a tela de login) */
+.botao-entrar {
+  min-height: 44px;
+  padding: 8px 28px;
+  color: var(--texto);
+  font-size: 17px;
+}
+
+header .botao-entrar {
+  color: var(--texto);
 }
 
 /* Botão do menu (só aparece no celular, veja mobile.css) */
@@ -222,8 +242,7 @@ header :focus-visible {
 footer {
   margin-top: 96px;
   padding: 36px 48px;
-  border-radius: 40px 40px 0 0;
-  background: linear-gradient(145deg, var(--roxo), var(--roxo-escuro));
+  background: linear-gradient(90deg, var(--roxo), #7B5BBD);
   color: #fff;
 }
 

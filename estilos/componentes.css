@@ -9,6 +9,8 @@
    Botões
    .botao                      -> roxo (padrão)
    .botao .botao-destaque      -> laranja (ação principal)
+
+   busque comer cimento ;)
    -------------------------------------------------------------------------- */
 .botao {
   display: inline-block;
@@ -17,8 +19,8 @@
   border: 0;
   border-radius: 999px;
 
-  background: linear-gradient(135deg, #5B3A9D, var(--roxo));
-  box-shadow: 0 10px 24px rgba(74, 46, 128, .35);
+  background: linear-gradient(135deg, #6446A8, var(--roxo));
+  box-shadow: 0 10px 24px rgba(83, 56, 134, .35);
   color: #fff;
 
   font: inherit;
@@ -30,7 +32,13 @@
 
 .botao:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(74, 46, 128, .42);
+  box-shadow: 0 14px 30px rgba(83, 56, 134, .42);
+}
+
+/* Roxo bem escuro (usado ao lado do laranja, no topo) */
+.botao-escuro {
+  background: var(--roxo-escuro);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .3);
 }
 
 .botao-destaque {
@@ -61,7 +69,7 @@
 
 .cartao:hover {
   transform: translateY(-4px);
-  box-shadow: 0 26px 50px rgba(74, 46, 128, .16);
+  box-shadow: 0 26px 50px rgba(83, 56, 134, .16);
 }
 
 /* Tracinho laranja no topo do cartão */
@@ -91,7 +99,7 @@
   padding: 16px 20px;
   border: 1px solid rgba(255, 255, 255, .85);
   border-radius: 20px;
-  background: rgba(255, 255, 255, .7);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(16px);
   box-shadow: 0 12px 32px rgba(33, 37, 41, .12);
 }
@@ -121,7 +129,7 @@
   display: block;
   height: 14px;
   border-radius: 7px;
-  background: rgba(74, 46, 128, .1);
+  background: rgba(83, 56, 134, .1);
   overflow: hidden;
 }
 
@@ -149,7 +157,7 @@
   margin: 0 8px 8px 0;
   padding: 3px 14px;
   border-radius: 999px;
-  background: rgba(74, 46, 128, .1);
+  background: rgba(83, 56, 134, .1);
   color: var(--roxo);
   font-size: 16px;
   font-weight: 700;
@@ -164,7 +172,7 @@
   margin-bottom: 14px;
   border-radius: 18px;
   background: linear-gradient(145deg, var(--roxo-claro), var(--roxo));
-  box-shadow: 0 10px 20px rgba(74, 46, 128, .3);
+  box-shadow: 0 10px 20px rgba(83, 56, 134, .3);
 }
 
 .icone svg {
@@ -196,7 +204,7 @@
   height: 120px;
   margin-bottom: 16px;
   border-radius: 20px;
-  background: linear-gradient(135deg, var(--roxo), #7A55C4);
+  background: linear-gradient(135deg, var(--roxo), #7D5FBF);
   overflow: hidden;
 }
 
@@ -241,7 +249,7 @@
   margin: 0;
   padding: 14px 0;
   border: 0;
-  border-top: 1px solid rgba(74, 46, 128, .12);
+  border-top: 1px solid rgba(83, 56, 134, .12);
 }
 
 /* A legenda existe para leitores de tela; quem enxerga vê o .rotulo */
@@ -274,7 +282,7 @@
   place-items: center;
   width: 48px;
   height: 48px;
-  border: 2px solid rgba(74, 46, 128, .35);
+  border: 2px solid rgba(83, 56, 134, .35);
   border-radius: 16px;
   background: rgba(255, 255, 255, .9);
   box-shadow: 0 4px 10px rgba(33, 37, 41, .06);
@@ -311,7 +319,7 @@ select {
   width: 100%;
   min-height: 48px;
   padding: 0 12px;
-  border: 2px solid rgba(74, 46, 128, .35);
+  border: 2px solid rgba(83, 56, 134, .35);
   border-radius: 16px;
   background: rgba(255, 255, 255, .9);
   font: inherit;
@@ -325,7 +333,7 @@ label.campo {
 
 /* "Mais adaptações", "Endereço e contato"... */
 details {
-  border-top: 1px solid rgba(74, 46, 128, .12);
+  border-top: 1px solid rgba(83, 56, 134, .12);
 }
 
 summary {
@@ -342,4 +350,54 @@ summary {
   margin-top: 16px;
   font-weight: 700;
   color: var(--roxo);
+}
+
+
+/* --------------------------------------------------------------------------
+   Estrelas de nota (formulário de avaliação)
+   As estrelas ficam na ordem 5 -> 1 no HTML e são mostradas de 1 -> 5
+   (row-reverse). Assim, "marcada e as anteriores" acendem só com CSS.
+   -------------------------------------------------------------------------- */
+.estrelas {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 4px;
+}
+
+.estrelas input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.estrelas label {
+  padding: 0 2px;
+  color: rgba(255, 255, 255, .35);
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.estrelas input:checked ~ label,
+.estrelas label:hover,
+.estrelas label:hover ~ label {
+  color: var(--laranja);
+}
+
+.estrelas input:focus-visible + label {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Campo de texto simples (descrição da nota, busca) */
+.descricao-nota {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 15px;
 }

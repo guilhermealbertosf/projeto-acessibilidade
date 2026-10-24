@@ -24,17 +24,17 @@
     <!-- ===================== CABEÇALHO E MENU ===================== -->
     <header>
         <a id="conteiner-logo" href="#inicio">
-            <img id="logo" src="midia/logos/logo-branca.png" alt="">
-            <span>Enlace Digital</span>
+            <img id="logo" src="midia/logos/logo-enlace-digital.png" width="170" height="40" alt="Enlace Digital, ir para o início">
         </a>
+        <nav id="navbar" aria-label="Principal">
+            <a href="#inicio" aria-current="location">Início</a>
+            <a href="#achar-escola">Escolas</a>
+            <a href="#sobre">Sobre nós</a>
+        </nav>
+        <a class="botao botao-destaque botao-entrar" href="paginas/login.html">Entrar</a>
         <button id="icone-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="navbar">
             <span class="material-symbols-outlined">menu</span>
         </button>
-        <nav id="navbar" aria-label="Principal">
-            <a href="#inicio" aria-current="location">Início</a>
-            <a href="#achar-escola">Achar escola</a>
-            <a href="#sobre">Sobre nós</a>
-        </nav>
     </header>
 
     <!-- Desenho reaproveitado nos cartões de escola (fica escondido, só serve de molde) -->
@@ -50,18 +50,19 @@
 
     <main>
 
-        <!-- ============================================================
-             1. INÍCIO
-             ============================================================ -->
+<!-- ============================================================
+1. INÍCIO
+============================================================ -->
         <section id="inicio">
 
             <!-- 1.1 Topo: título, botões e imagem -->
-            <div id="topo" class="conteiner">
+            <div id="topo">
+                <div class="conteiner topo-conteudo">
                 <div>
                     <h1>Encontre a escola que tem a adaptação que seu filho precisa</h1>
                     <p class="subtitulo">“Escola acessível” não diz nada. Aqui você vê cada adaptação, com a nota dada por outras famílias.</p>
-                    <a class="botao botao-destaque" href="#achar-escola">Achar escola</a>
-                    <a class="botao" href="#sobre">Como funciona</a>
+                    <a class="botao botao-escuro" href="#achar-escola">Achar escola</a>
+                    <a class="botao botao-destaque" href="#avaliar">Avaliar escola</a>
                 </div>
 
                 <!-- Computador: imagem da família -->
@@ -86,6 +87,7 @@
                         <span class="selo selo-solto" aria-label="5 de 10 itens de acessibilidade">4.5</span>
                     </div>
                 </div>
+            </div>
             </div>
 
             <!-- 1.2 Comece pela necessidade -->
@@ -120,29 +122,22 @@
                 </div>
             </section>
 
-            <!-- 1.3 Genérico ou específico? -->
-            <section id="comparacao" class="conteiner secao">
-                <h2>Genérico ou específico?</h2>
-                <div class="grade comparacao">
-                    <div class="cartao">
-                        <h3>Hoje</h3>
-                        <p class="citacao">“Nossa escola é acessível.”</p>
-                        <p class="suave">Não diz se há rampa, intérprete ou apoio para autismo.</p>
+            <!-- 1.3 Chamada para avaliar -->
+            <div class="conteiner secao">
+                <div id="chamada" class="cartao destaque">
+                    <div>
+                        <h2>Deseja avaliar alguma escola? Avalie.</h2>
+                        <p>Sua experiência ajuda a próxima família.</p>
                     </div>
-                    <div class="cartao destaque">
-                        <h3>No portal</h3>
-                        <div class="barra-nota"><span>Rampas</span><i><b style="--largura: 100%"></b></i><strong>Sim</strong></div>
-                        <div class="barra-nota"><span>Piso tátil</span><i><b style="--largura: 100%"></b></i><strong>Sim</strong></div>
-                        <div class="barra-nota"><span>Elevador</span><i><b style="--largura: 0%"></b></i><strong>Não</strong></div>
-                        <p class="suave">Exemplo real: Escola Municipal Alto do Pascoal, Censo Escolar 2025.</p>
-                    </div>
+                    <a class="botao botao-destaque" href="#avaliar">Avalie uma escola</a>
                 </div>
-            </section>
+            </div>
 
-            <!-- 1.4 Escolas em destaque (dados reais do Censo Escolar 2025, INEP/MEC) -->
-            <section id="destaques" class="conteiner secao">
-                <h2>Escolas com acessibilidade registrada</h2>
-                <p class="suave">Dados do Censo Escolar 2025 (INEP/MEC). Ainda sem avaliações de famílias.</p>
+            <!-- 1.4 Bem avaliadas de cada região (dados reais do Censo Escolar 2025, INEP/MEC) -->
+            <section class="conteiner secao">
+                <div id="destaques">
+                <h2>Bem avaliadas de cada região</h2>
+                <p class="suave">As notas vêm dos itens de acessibilidade do Censo Escolar 2025 (INEP/MEC). Ainda sem avaliações de famílias.</p>
                 <div class="grade escolas-destaque">
 
                     <article class="cartao destaque">
@@ -179,18 +174,8 @@
                     </article>
 
                 </div>
-            </section>
-
-            <!-- 1.5 Chamada para avaliar -->
-            <div class="conteiner secao">
-                <div id="chamada" class="cartao destaque">
-                    <div>
-                        <h2>Conhece uma escola? Avalie.</h2>
-                        <p>Sua experiência ajuda a próxima família.</p>
-                    </div>
-                    <a class="botao botao-destaque" href="#avaliar">Avaliar uma escola</a>
                 </div>
-            </div>
+            </section>
 
         </section>
 
@@ -200,7 +185,7 @@
              ============================================================ -->
         <section id="achar-escola">
 
-            <!-- Filtro, lista e mapa -->
+            <!-- 2. Filtro e lista de escolas -->
             <div class="conteiner secao">
                 <h2 class="titulo-secao">Achar escola</h2>
 
@@ -212,126 +197,108 @@
                         <label class="opcao pilula"><input type="radio" name="necessidade" value="intelectual"><span>Intelectual</span></label>
                         <label class="opcao pilula"><input type="radio" name="necessidade" value="tea"><span>TEA</span></label>
                     </div>
-                    <select aria-label="Município"><option>Recife</option></select>
+                    <select id="bairro" aria-label="Bairro">
+                        <option value="">Todos os bairros</option>
+                        <option>Santo Amaro</option>
+                        <option>Boa Vista</option>
+                        <option>Água Fria</option>
+                    </select>
                 </form>
 
-                <div class="grade busca">
+                <p class="aba-escolas">Escolas</p>
 
-                    <!-- Lista (dados reais do Censo Escolar, INEP/MEC) -->
-                    <div class="grade">
-                        <p class="resumo-busca"><strong>5 escolas</strong> com estrutura para deficiência motora, ordenadas pelo número de itens de acessibilidade do Censo Escolar. <span class="suave">Empates em ordem alfabética.</span></p>
+                <div class="barra-busca">
+                    <p class="resumo-busca"><strong id="total-escolas">5 escolas</strong> com estrutura para deficiência motora, ordenadas pelo número de itens de acessibilidade do Censo Escolar. <span class="suave">Empates em ordem alfabética.</span></p>
+                    <label class="campo-busca">
+                        <span class="so-leitor">Buscar escola pelo nome</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="M15 15l6 6"/></svg>
+                        <input type="search" id="busca-escola" placeholder="Deseja alguma escola específica?">
+                    </label>
+                </div>
 
-                        <article class="cartao destaque">
-                            <div class="arte">
-                                <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#arte-escola" width="300" height="120"/></svg>
-                                <span class="selo" aria-label="5 de 10 itens de acessibilidade">4.5</span>
-                            </div>
-                            <h3><span class="numero">1</span>Escola Municipal Alto do Pascoal</h3>
-                            <p class="suave">Água Fria, Recife · Censo 2025</p>
-                            <div><span class="etiqueta">Rampas</span><span class="etiqueta">Portas largas</span><span class="etiqueta">Banheiro adaptado</span></div>
-                            <a class="botao" href="#escola">Ver escola</a>
-                        </article>
+                <!-- Lista (dados reais do Censo Escolar, INEP/MEC) -->
+                <div id="lista-escolas" class="grade escolas-lista">
 
-                        <article class="cartao destaque">
-                            <div class="arte">
-                                <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#arte-escola" width="300" height="120"/></svg>
-                                <span class="selo" aria-label="5 de 10 itens de acessibilidade">4.0</span>
-                            </div>
-                            <h3><span class="numero">2</span>Escola Municipal Lutadores do Bem</h3>
-                            <p class="suave">Santo Amaro, Recife · Censo 2025</p>
-                            <div><span class="etiqueta">Rampas</span><span class="etiqueta">Banheiro adaptado</span></div>
-                            <a class="botao" href="#escola">Ver escola</a>
-                        </article>
-
-                        <article class="cartao destaque">
-                            <div class="arte">
-                                <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#arte-escola" width="300" height="120"/></svg>
-                                <span class="selo" aria-label="5 de 10 itens de acessibilidade">4.7</span>
-                            </div>
-                            <h3><span class="numero">3</span>Escola Municipal Santo Amaro Severino Gomes Bria</h3>
-                            <p class="suave">Santo Amaro, Recife · Censo 2025</p>
-                            <div><span class="etiqueta">Corrimão</span><span class="etiqueta">Elevador</span><span class="etiqueta">Banheiro adaptado</span></div>
-                            <a class="botao" href="#escola">Ver escola</a>
-                        </article>
-
-                        <article class="cartao destaque">
-                            <div class="arte">
-                                <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#arte-escola" width="300" height="120"/></svg>
-                                <span class="selo" aria-label="4 de 10 itens de acessibilidade">4.0</span>
-                            </div>
-                            <h3><span class="numero">4</span>Escola Municipal Novo Horizonte</h3>
-                            <p class="suave">Água Fria, Recife · Censo 2025</p>
-                            <div><span class="etiqueta">Corrimão</span><span class="etiqueta">Portas largas</span><span class="etiqueta">Banheiro adaptado</span></div>
-                            <a class="botao" href="#escola">Ver escola</a>
-                        </article>
-
-                        <article class="cartao destaque">
-                            <div class="arte">
-                                <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#arte-escola" width="300" height="120"/></svg>
-                                <span class="selo" aria-label="4 de 10 itens de acessibilidade">4.0</span>
-                            </div>
-                            <h3><span class="numero">5</span>Escola Municipal Pedro Augusto</h3>
-                            <p class="suave">Boa Vista, Recife · Censo 2024</p>
-                            <div><span class="etiqueta">Corrimão</span><span class="etiqueta">Portas largas</span><span class="etiqueta">Banheiro adaptado</span></div>
-                            <a class="botao" href="#escola">Ver escola</a>
-                        </article>
-                    </div>
-
-                    <!-- Mapa -->
-                    <div id="mapa" class="cartao">
-                        <svg viewBox="0 0 640 760" role="img" aria-label="Mapa esquemático com cinco escolas numeradas no Recife: duas em Água Fria, duas em Santo Amaro e uma na Boa Vista. Posições aproximadas.">
-
-                            <rect width="640" height="760" fill="#EEF0F3"/>
-                            <path d="M0 600C140 560 220 680 360 630S560 560 640 600V760H0Z" fill="#D5E1EA"/>
-                            <path d="M-10 300C150 330 250 250 400 290S560 380 650 330" stroke="#D5E1EA" stroke-width="26" fill="none"/>
-                            <g stroke="#fff" stroke-width="8" fill="none">
-                                <path d="M80 0L180 760"/>
-                                <path d="M0 140L640 220"/>
-                                <path d="M360 0L440 760"/>
-                                <path d="M0 460L640 420"/>
-                            </g>
-                            <g font-family="sans-serif" font-size="17" font-weight="700" text-anchor="middle" fill="#495057">
-                                <text x="150" y="60">Água Fria</text>
-                                <text x="520" y="395">Santo Amaro</text>
-                                <text x="180" y="515">Boa Vista</text>
-                                <text x="300" y="330" opacity=".7">Rio Capibaribe</text>
-                            </g>
-                            <g font-family="sans-serif" font-weight="700" font-size="20" text-anchor="middle">
-                                <circle cx="250" cy="205" r="30" fill="#4A2E80" stroke="#D96B27" stroke-width="8"/><text x="250" y="212" fill="#fff">1</text>
-                                <circle cx="470" cy="450" r="22" fill="#4A2E80" stroke="#fff" stroke-width="3"/><text x="470" y="457" fill="#fff">2</text>
-                                <circle cx="540" cy="510" r="22" fill="#4A2E80" stroke="#fff" stroke-width="3"/><text x="540" y="517" fill="#fff">3</text>
-                                <circle cx="110" cy="150" r="22" fill="#4A2E80" stroke="#fff" stroke-width="3"/><text x="110" y="157" fill="#fff">4</text>
-                                <circle cx="260" cy="440" r="22" fill="#4A2E80" stroke="#fff" stroke-width="3"/><text x="260" y="447" fill="#fff">5</text>
-                            </g>
-                        </svg>
-
-                        <div class="vidro">
-                            <div><strong>1 · Escola Municipal Alto do Pascoal</strong><br><span class="suave">5 de 10 itens · Água Fria</span></div>
-                            <a class="botao" href="#escola">Ver escola</a>
+                    <article class="cartao destaque" data-bairro="Água Fria">
+                        <div class="arte">
+                            <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#arte-escola" width="300" height="120"/></svg>
+                            <span class="selo" aria-label="5 de 10 itens de acessibilidade">4.5</span>
                         </div>
-                    </div>
+                        <h3>Escola Municipal Alto do Pascoal</h3>
+                        <p class="suave">Água Fria, Recife · Censo 2025</p>
+                        <div><span class="etiqueta">Rampas</span><span class="etiqueta">Portas largas</span><span class="etiqueta">Banheiro adaptado</span></div>
+                        <a class="botao" href="#escola">Ver escola</a>
+                    </article>
+
+                    <article class="cartao destaque" data-bairro="Santo Amaro">
+                        <div class="arte">
+                            <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#arte-escola" width="300" height="120"/></svg>
+                            <span class="selo" aria-label="5 de 10 itens de acessibilidade">4.0</span>
+                        </div>
+                        <h3>Escola Municipal Lutadores do Bem</h3>
+                        <p class="suave">Santo Amaro, Recife · Censo 2025</p>
+                        <div><span class="etiqueta">Rampas</span><span class="etiqueta">Banheiro adaptado</span></div>
+                        <a class="botao" href="#escola">Ver escola</a>
+                    </article>
+
+                    <article class="cartao destaque" data-bairro="Santo Amaro">
+                        <div class="arte">
+                            <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#arte-escola" width="300" height="120"/></svg>
+                            <span class="selo" aria-label="5 de 10 itens de acessibilidade">4.7</span>
+                        </div>
+                        <h3>Escola Municipal Santo Amaro Severino Gomes Bria</h3>
+                        <p class="suave">Santo Amaro, Recife · Censo 2025</p>
+                        <div><span class="etiqueta">Corrimão</span><span class="etiqueta">Elevador</span><span class="etiqueta">Banheiro adaptado</span></div>
+                        <a class="botao" href="#escola">Ver escola</a>
+                    </article>
+
+                    <article class="cartao destaque" data-bairro="Água Fria">
+                        <div class="arte">
+                            <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#arte-escola" width="300" height="120"/></svg>
+                            <span class="selo" aria-label="4 de 10 itens de acessibilidade">4.0</span>
+                        </div>
+                        <h3>Escola Municipal Novo Horizonte</h3>
+                        <p class="suave">Água Fria, Recife · Censo 2025</p>
+                        <div><span class="etiqueta">Corrimão</span><span class="etiqueta">Portas largas</span><span class="etiqueta">Banheiro adaptado</span></div>
+                        <a class="botao" href="#escola">Ver escola</a>
+                    </article>
+
+                    <article class="cartao destaque" data-bairro="Boa Vista">
+                        <div class="arte">
+                            <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#arte-escola" width="300" height="120"/></svg>
+                            <span class="selo" aria-label="4 de 10 itens de acessibilidade">4.0</span>
+                        </div>
+                        <h3>Escola Municipal Pedro Augusto</h3>
+                        <p class="suave">Boa Vista, Recife · Censo 2024</p>
+                        <div><span class="etiqueta">Corrimão</span><span class="etiqueta">Portas largas</span><span class="etiqueta">Banheiro adaptado</span></div>
+                        <a class="botao" href="#escola">Ver escola</a>
+                    </article>
 
                 </div>
+                <p id="sem-resultado" class="suave" hidden>Nenhuma escola encontrada. Tente outro bairro ou outro nome.</p>
             </div>
 
 
             <!-- 2.1 Página da escola (Escola Municipal Alto do Pascoal, dados do Censo Escolar 2025) -->
             <section id="escola" class="conteiner secao">
                 <div id="escola-topo">
-                    <svg viewBox="0 0 400 300" aria-hidden="true">
-                        <circle cx="300" cy="80" r="56" fill="#D96B27" opacity=".92"/>
-                        <path d="M180 300V150l90-48 90 48v150z" fill="#fff" opacity=".16"/>
-                        <path d="M250 300v-80h60v80z" fill="#fff" opacity=".32"/>
-                    </svg>
-                    <div>
-                        <p><a href="#achar-escola">Achar escola</a> › Escola Municipal Alto do Pascoal</p>
+                    <div class="escola-info">
+                        <p class="migalhas"><a href="#achar-escola">Escolas</a> › Escola Municipal Alto do Pascoal</p>
                         <h2>Escola Municipal Alto do Pascoal</h2>
-                        <p>Água Fria, Recife · Educação infantil e ensino fundamental</p>
-                        <div class="vidro">
+                        <p class="suave">Água Fria, Recife · Educação infantil e ensino fundamental</p>
+                        <div class="nota-caixa">
                             <span class="nota">5</span>
                             <span>de 10 itens<br><span class="suave">Censo 2025</span></span>
                         </div>
-                        <a class="botao botao-destaque" href="#avaliar">Avaliar esta escola</a>
+                        <a class="botao botao-destaque" href="#avaliar">Avaliar essa escola</a>
+                    </div>
+                    <div class="escola-mapa">
+                        <img src="midia/conteudo/mapa-escola.png" width="392" height="392" alt="Mapa ilustrativo da região da escola">
+                        <div>
+                            <h3>Endereço:</h3>
+                            <p>Rua Ladeira de Pedra, 1265, Água Fria, Recife · CEP 52111-430</p>
+                            <p class="suave">Mapa ilustrativo. A localização exata será adicionada.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -348,8 +315,8 @@
 
                     <div class="grade">
                         <div class="cartao destaque">
-                            <h3 class="titulo-grande">Etapas de ensino</h3>
-                            <span class="etiqueta">Educação infantil</span><span class="etiqueta">Ensino fundamental</span>
+                            <h3 class="titulo-grande">Comentários das famílias</h3>
+                            <p class="suave">Ainda não há comentários. Quando uma família avaliar esta escola e deixar uma descrição, ela aparece aqui.</p>
                         </div>
                         <div class="cartao">
                             <details>
@@ -363,8 +330,8 @@
                                 <p class="suave">O índice conta quantos dos 10 itens de acessibilidade do Censo Escolar a escola declara: rampas, piso tátil, corrimão, elevador, portas largas, banheiro acessível, sala de recursos (AEE) e sinalização tátil, sonora e visual. Ele mostra o que existe, não a qualidade.</p>
                             </details>
                             <details>
-                                <summary>Endereço e contato</summary>
-                                <p class="suave">Rua Ladeira de Pedra, 1265, Água Fria, Recife · CEP 52111-430 · (81) 3355-4221 · emaltodopascoal@hotmail.com</p>
+                                <summary>Etapas de ensino e contato</summary>
+                                <p class="suave">Educação infantil e ensino fundamental · (81) 3355-4221 · emaltodopascoal@hotmail.com</p>
                             </details>
                         </div>
                     </div>
@@ -376,98 +343,55 @@
             <section id="avaliar" class="conteiner mais-estreito secao">
                 <p class="suave voltar"><a href="#escola">‹ Voltar para Escola Municipal Alto do Pascoal</a></p>
                 <h2 class="titulo-secao">Avalie a Escola Municipal Alto do Pascoal</h2>
-                <p>Sete perguntas rápidas. De 1 (não atende) a 5 (atende muito bem). Responda só o que você conhece.</p>
+                <p>Sete notas rápidas, de 1 a 5 estrelas. A descrição é opcional.</p>
 
-                <form id="formulario-avaliacao" class="cartao destaque">
+                <form id="formulario-avaliacao" class="painel-avaliacao destaque">
+                    <h3>Avaliação</h3>
                     <fieldset class="linha-nota">
-                        <legend>Rampas e acessos</legend>
-                        <span class="rotulo" aria-hidden="true">Rampas e acessos</span>
-                        <div>
-                            <label class="opcao"><input type="radio" name="a1" value="1"><span>1</span></label>
-                            <label class="opcao"><input type="radio" name="a1" value="2"><span>2</span></label>
-                            <label class="opcao"><input type="radio" name="a1" value="3"><span>3</span></label>
-                            <label class="opcao"><input type="radio" name="a1" value="4"><span>4</span></label>
-                            <label class="opcao"><input type="radio" name="a1" value="5"><span>5</span></label>
-                        </div>
+                        <legend>Visual</legend>
+                        <span class="rotulo" aria-hidden="true">Visual</span>
+                        <div class="estrelas"><input type="radio" id="a1-5" name="a1" value="5"><label for="a1-5" title="5 de 5"><span class="so-leitor">5 de 5</span>★</label><input type="radio" id="a1-4" name="a1" value="4"><label for="a1-4" title="4 de 5"><span class="so-leitor">4 de 5</span>★</label><input type="radio" id="a1-3" name="a1" value="3"><label for="a1-3" title="3 de 5"><span class="so-leitor">3 de 5</span>★</label><input type="radio" id="a1-2" name="a1" value="2"><label for="a1-2" title="2 de 5"><span class="so-leitor">2 de 5</span>★</label><input type="radio" id="a1-1" name="a1" value="1"><label for="a1-1" title="1 de 5"><span class="so-leitor">1 de 5</span>★</label></div>
+                        <input class="descricao-nota" type="text" name="d1" placeholder="Deixe uma descrição da nota" aria-label="Descrição da nota de Visual (opcional)">
                     </fieldset>
                     <fieldset class="linha-nota">
-                        <legend>Banheiro adaptado</legend>
-                        <span class="rotulo" aria-hidden="true">Banheiro adaptado</span>
-                        <div>
-                            <label class="opcao"><input type="radio" name="a2" value="1"><span>1</span></label>
-                            <label class="opcao"><input type="radio" name="a2" value="2"><span>2</span></label>
-                            <label class="opcao"><input type="radio" name="a2" value="3"><span>3</span></label>
-                            <label class="opcao"><input type="radio" name="a2" value="4"><span>4</span></label>
-                            <label class="opcao"><input type="radio" name="a2" value="5"><span>5</span></label>
-                        </div>
+                        <legend>Motora</legend>
+                        <span class="rotulo" aria-hidden="true">Motora</span>
+                        <div class="estrelas"><input type="radio" id="a2-5" name="a2" value="5"><label for="a2-5" title="5 de 5"><span class="so-leitor">5 de 5</span>★</label><input type="radio" id="a2-4" name="a2" value="4"><label for="a2-4" title="4 de 5"><span class="so-leitor">4 de 5</span>★</label><input type="radio" id="a2-3" name="a2" value="3"><label for="a2-3" title="3 de 5"><span class="so-leitor">3 de 5</span>★</label><input type="radio" id="a2-2" name="a2" value="2"><label for="a2-2" title="2 de 5"><span class="so-leitor">2 de 5</span>★</label><input type="radio" id="a2-1" name="a2" value="1"><label for="a2-1" title="1 de 5"><span class="so-leitor">1 de 5</span>★</label></div>
+                        <input class="descricao-nota" type="text" name="d2" placeholder="Deixe uma descrição da nota" aria-label="Descrição da nota de Motora (opcional)">
                     </fieldset>
                     <fieldset class="linha-nota">
-                        <legend>Sinalização tátil</legend>
-                        <span class="rotulo" aria-hidden="true">Sinalização tátil</span>
-                        <div>
-                            <label class="opcao"><input type="radio" name="a3" value="1"><span>1</span></label>
-                            <label class="opcao"><input type="radio" name="a3" value="2"><span>2</span></label>
-                            <label class="opcao"><input type="radio" name="a3" value="3"><span>3</span></label>
-                            <label class="opcao"><input type="radio" name="a3" value="4"><span>4</span></label>
-                            <label class="opcao"><input type="radio" name="a3" value="5"><span>5</span></label>
-                        </div>
+                        <legend>Intelectual</legend>
+                        <span class="rotulo" aria-hidden="true">Intelectual</span>
+                        <div class="estrelas"><input type="radio" id="a3-5" name="a3" value="5"><label for="a3-5" title="5 de 5"><span class="so-leitor">5 de 5</span>★</label><input type="radio" id="a3-4" name="a3" value="4"><label for="a3-4" title="4 de 5"><span class="so-leitor">4 de 5</span>★</label><input type="radio" id="a3-3" name="a3" value="3"><label for="a3-3" title="3 de 5"><span class="so-leitor">3 de 5</span>★</label><input type="radio" id="a3-2" name="a3" value="2"><label for="a3-2" title="2 de 5"><span class="so-leitor">2 de 5</span>★</label><input type="radio" id="a3-1" name="a3" value="1"><label for="a3-1" title="1 de 5"><span class="so-leitor">1 de 5</span>★</label></div>
+                        <input class="descricao-nota" type="text" name="d3" placeholder="Deixe uma descrição da nota" aria-label="Descrição da nota de Intelectual (opcional)">
                     </fieldset>
                     <fieldset class="linha-nota">
-                        <legend>Intérprete de Libras</legend>
-                        <span class="rotulo" aria-hidden="true">Intérprete de Libras</span>
-                        <div>
-                            <label class="opcao"><input type="radio" name="a4" value="1"><span>1</span></label>
-                            <label class="opcao"><input type="radio" name="a4" value="2"><span>2</span></label>
-                            <label class="opcao"><input type="radio" name="a4" value="3"><span>3</span></label>
-                            <label class="opcao"><input type="radio" name="a4" value="4"><span>4</span></label>
-                            <label class="opcao"><input type="radio" name="a4" value="5"><span>5</span></label>
-                        </div>
+                        <legend>Auditiva</legend>
+                        <span class="rotulo" aria-hidden="true">Auditiva</span>
+                        <div class="estrelas"><input type="radio" id="a4-5" name="a4" value="5"><label for="a4-5" title="5 de 5"><span class="so-leitor">5 de 5</span>★</label><input type="radio" id="a4-4" name="a4" value="4"><label for="a4-4" title="4 de 5"><span class="so-leitor">4 de 5</span>★</label><input type="radio" id="a4-3" name="a4" value="3"><label for="a4-3" title="3 de 5"><span class="so-leitor">3 de 5</span>★</label><input type="radio" id="a4-2" name="a4" value="2"><label for="a4-2" title="2 de 5"><span class="so-leitor">2 de 5</span>★</label><input type="radio" id="a4-1" name="a4" value="1"><label for="a4-1" title="1 de 5"><span class="so-leitor">1 de 5</span>★</label></div>
+                        <input class="descricao-nota" type="text" name="d4" placeholder="Deixe uma descrição da nota" aria-label="Descrição da nota de Auditiva (opcional)">
                     </fieldset>
                     <fieldset class="linha-nota">
-                        <legend>Material adaptado</legend>
-                        <span class="rotulo" aria-hidden="true">Material adaptado</span>
-                        <div>
-                            <label class="opcao"><input type="radio" name="a5" value="1"><span>1</span></label>
-                            <label class="opcao"><input type="radio" name="a5" value="2"><span>2</span></label>
-                            <label class="opcao"><input type="radio" name="a5" value="3"><span>3</span></label>
-                            <label class="opcao"><input type="radio" name="a5" value="4"><span>4</span></label>
-                            <label class="opcao"><input type="radio" name="a5" value="5"><span>5</span></label>
-                        </div>
+                        <legend>Psicossocial</legend>
+                        <span class="rotulo" aria-hidden="true">Psicossocial</span>
+                        <div class="estrelas"><input type="radio" id="a5-5" name="a5" value="5"><label for="a5-5" title="5 de 5"><span class="so-leitor">5 de 5</span>★</label><input type="radio" id="a5-4" name="a5" value="4"><label for="a5-4" title="4 de 5"><span class="so-leitor">4 de 5</span>★</label><input type="radio" id="a5-3" name="a5" value="3"><label for="a5-3" title="3 de 5"><span class="so-leitor">3 de 5</span>★</label><input type="radio" id="a5-2" name="a5" value="2"><label for="a5-2" title="2 de 5"><span class="so-leitor">2 de 5</span>★</label><input type="radio" id="a5-1" name="a5" value="1"><label for="a5-1" title="1 de 5"><span class="so-leitor">1 de 5</span>★</label></div>
+                        <input class="descricao-nota" type="text" name="d5" placeholder="Deixe uma descrição da nota" aria-label="Descrição da nota de Psicossocial (opcional)">
                     </fieldset>
                     <fieldset class="linha-nota">
-                        <legend>Apoio para TEA</legend>
-                        <span class="rotulo" aria-hidden="true">Apoio para TEA</span>
-                        <div>
-                            <label class="opcao"><input type="radio" name="a6" value="1"><span>1</span></label>
-                            <label class="opcao"><input type="radio" name="a6" value="2"><span>2</span></label>
-                            <label class="opcao"><input type="radio" name="a6" value="3"><span>3</span></label>
-                            <label class="opcao"><input type="radio" name="a6" value="4"><span>4</span></label>
-                            <label class="opcao"><input type="radio" name="a6" value="5"><span>5</span></label>
-                        </div>
+                        <legend>Libras</legend>
+                        <span class="rotulo" aria-hidden="true">Libras</span>
+                        <div class="estrelas"><input type="radio" id="a6-5" name="a6" value="5"><label for="a6-5" title="5 de 5"><span class="so-leitor">5 de 5</span>★</label><input type="radio" id="a6-4" name="a6" value="4"><label for="a6-4" title="4 de 5"><span class="so-leitor">4 de 5</span>★</label><input type="radio" id="a6-3" name="a6" value="3"><label for="a6-3" title="3 de 5"><span class="so-leitor">3 de 5</span>★</label><input type="radio" id="a6-2" name="a6" value="2"><label for="a6-2" title="2 de 5"><span class="so-leitor">2 de 5</span>★</label><input type="radio" id="a6-1" name="a6" value="1"><label for="a6-1" title="1 de 5"><span class="so-leitor">1 de 5</span>★</label></div>
+                        <input class="descricao-nota" type="text" name="d6" placeholder="Deixe uma descrição da nota" aria-label="Descrição da nota de Libras (opcional)">
                     </fieldset>
                     <fieldset class="linha-nota">
-                        <legend>Apoio de profissional</legend>
-                        <span class="rotulo" aria-hidden="true">Apoio de profissional</span>
-                        <div>
-                            <label class="opcao"><input type="radio" name="a7" value="1"><span>1</span></label>
-                            <label class="opcao"><input type="radio" name="a7" value="2"><span>2</span></label>
-                            <label class="opcao"><input type="radio" name="a7" value="3"><span>3</span></label>
-                            <label class="opcao"><input type="radio" name="a7" value="4"><span>4</span></label>
-                            <label class="opcao"><input type="radio" name="a7" value="5"><span>5</span></label>
-                        </div>
+                        <legend>Braille</legend>
+                        <span class="rotulo" aria-hidden="true">Braille</span>
+                        <div class="estrelas"><input type="radio" id="a7-5" name="a7" value="5"><label for="a7-5" title="5 de 5"><span class="so-leitor">5 de 5</span>★</label><input type="radio" id="a7-4" name="a7" value="4"><label for="a7-4" title="4 de 5"><span class="so-leitor">4 de 5</span>★</label><input type="radio" id="a7-3" name="a7" value="3"><label for="a7-3" title="3 de 5"><span class="so-leitor">3 de 5</span>★</label><input type="radio" id="a7-2" name="a7" value="2"><label for="a7-2" title="2 de 5"><span class="so-leitor">2 de 5</span>★</label><input type="radio" id="a7-1" name="a7" value="1"><label for="a7-1" title="1 de 5"><span class="so-leitor">1 de 5</span>★</label></div>
+                        <input class="descricao-nota" type="text" name="d7" placeholder="Deixe uma descrição da nota" aria-label="Descrição da nota de Braille (opcional)">
                     </fieldset>
-                    <label class="campo" for="perfil">Perfil do seu filho (opcional)</label>
-                    <select id="perfil">
-                        <option>Prefiro não informar</option>
-                        <option>Visual</option>
-                        <option>Auditiva</option>
-                        <option>Motora</option>
-                        <option>Intelectual</option>
-                        <option>TEA</option>
-                    </select>
-
-                    <p class="suave">Sem cadastro. Anônimo e sem texto livre.</p>
-                    <button class="botao botao-destaque" type="submit">Enviar avaliação</button>
+                    <p class="aviso-avaliacao">Pedimos sua colaboração para manter as informações fiéis à realidade. Se não tiver opinião sobre alguma área, deixe-a em branco.</p>
+                    <p class="aviso-avaliacao">Para enviar, <a href="paginas/login.html">entre na sua conta</a> ou <a href="paginas/cadastro.html">cadastre-se</a>.</p>
+                    <button class="botao botao-destaque" type="submit">Enviar</button>
                     <p id="agradecimento" class="agradecimento" role="status"></p>
                 </form>
             </section>
@@ -489,8 +413,8 @@
                         <p>Muitas escolas dizem ser “acessíveis”, mas isso não diz se há rampa, intérprete de Libras ou apoio para autismo.</p>
                     </section>
                     <section class="cartao destaque">
-                        <h3 class="titulo-grande">Como as notas funcionam</h3>
-                        <p>Cada família avalia por adaptação, numa escala de 1 a 5. O portal mostra só médias e o número de avaliações. Não há cadastro nem texto livre.</p>
+                        <h3 class="titulo-grande">Como as notas funcionam?</h3>
+                        <p>Cada família avalia por adaptação, numa escala de 1 a 5. O portal mostra as médias, o número de avaliações e as descrições deixadas pelas famílias.</p>
                         <p class="suave">As notas são “avaliadas por famílias”: não são uma certificação da escola.</p>
                     </section>
                     <section class="cartao destaque">
@@ -498,9 +422,8 @@
                         <p>Começamos pela região metropolitana do Recife e queremos crescer com a ajuda das famílias.</p>
                     </section>
                     <section class="cartao destaque">
-                        <h3 class="titulo-grande">Fale com a gente</h3>
+                        <h3 class="titulo-grande">Fale conosco</h3>
                         <p>[E-MAIL DE CONTATO] · [INSTITUIÇÃO / EQUIPE]</p>
-                        <a class="botao" href="#inicio">Voltar ao início</a>
                     </section>
                 </div>
             </div>
@@ -512,9 +435,9 @@
     <!-- ===================== RODAPÉ ===================== -->
     <footer>
         <div class="conteiner">
-            <div><strong>Enlace Digital</strong><br>Piloto na região metropolitana do Recife</div>
-            <div>Sem cadastro. Avaliações feitas por famílias, de forma anônima.<br>
-                <a href="#sobre">Sobre nós</a> · <a href="#sobre">Privacidade</a> </div>
+            <div><strong>Enlace Digital</strong><br>Região Metropolitana do Recife</div>
+            <div>Avaliações feitas por famílias com conta no portal.<br>
+                <a href="#sobre">Sobre nós</a> · <a href="paginas/login.html">Entrar</a> · <a href="paginas/cadastro.html">Cadastrar</a></div>
         </div>
     </footer>
 
