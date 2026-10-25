@@ -133,47 +133,13 @@
                 </div>
             </div>
 
-            <!-- 1.4 Bem avaliadas de cada região (dados reais do Censo Escolar 2025, INEP/MEC) -->
+            <!-- 1.4 Escolas mais bem avaliadas de cada bairro -->
             <section class="conteiner secao">
                 <div id="destaques">
                 <h2>Bem avaliadas de cada região</h2>
-                <p class="suave">As notas vêm dos itens de acessibilidade do Censo Escolar 2025 (INEP/MEC). Ainda sem avaliações de famílias.</p>
-                <div class="grade escolas-destaque">
-
-                    <article class="cartao destaque">
-                        <div class="arte">
-                            <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#arte-escola" width="300" height="120"/></svg>
-                            <span class="selo" aria-label="5 de 10 itens de acessibilidade">4.5</span>
-                        </div>
-                        <h3>Escola Municipal Alto do Pascoal</h3>
-                        <p class="suave">Água Fria, Recife · Censo 2025</p>
-                        <div><span class="etiqueta">Rampas</span><span class="etiqueta">Banheiro adaptado</span><span class="etiqueta">Piso tátil</span></div>
-                        <a class="botao" href="#escola">Ver escola</a>
-                    </article>
-
-                    <article class="cartao destaque">
-                        <div class="arte">
-                            <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#arte-escola" width="300" height="120"/></svg>
-                            <span class="selo" aria-label="5 de 10 itens de acessibilidade">4.5</span>
-                        </div>
-                        <h3>Escola Municipal Lutadores do Bem</h3>
-                        <p class="suave">Santo Amaro, Recife · Censo 2025</p>
-                        <div><span class="etiqueta">Rampas</span><span class="etiqueta">Piso tátil</span><span class="etiqueta">Banheiro adaptado</span></div>
-                        <a class="botao" href="#escola">Ver escola</a>
-                    </article>
-
-                    <article class="cartao destaque">
-                        <div class="arte">
-                            <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#arte-escola" width="300" height="120"/></svg>
-                            <span class="selo" aria-label="5 de 10 itens de acessibilidade">4.9</span>
-                        </div>
-                        <h3>Escola Municipal Santo Amaro Severino Gomes Bria</h3>
-                        <p class="suave">Santo Amaro, Recife · Censo 2025</p>
-                        <div><span class="etiqueta">Elevador</span><span class="etiqueta">Piso tátil</span><span class="etiqueta">Banheiro adaptado</span></div>
-                        <a class="botao" href="#escola">Ver escola</a>
-                    </article>
-
-                </div>
+                <p class="suave">Uma escola com a maior pontuação em cada bairro consultado.</p>
+                <div class="grade escolas-destaque" id="lista-destaques" aria-live="polite">Carregando escolas...</div>
+                <p id="erro-destaques" class="suave" role="alert" hidden></p>
                 </div>
             </section>
 
@@ -443,6 +409,8 @@
         </div>
     </footer>
 
+    <script src="scripts/api.js"></script>
+    <script src="scripts/destaques.js"></script>
     <script src="scripts/script.js"></script>
 </body>
 </html>
