@@ -166,6 +166,12 @@ header {
   grid-template-columns: 130px 1fr 40px;
 }
 
+.avaliacao-grupo {
+  grid-template-columns: minmax(78px, 100px) minmax(0, 1fr) 36px;
+  gap: 10px;
+  font-size: 14px;
+}
+
 /* O nome da pergunta ocupa uma linha, e os números vão para baixo */
 .linha-nota .rotulo {
   width: 100%;
@@ -203,6 +209,10 @@ header {
 
 .escola-mapa {
   grid-template-columns: 1fr;
+}
+
+.escola-mapa img {
+  min-height: 0;
 }
 
 

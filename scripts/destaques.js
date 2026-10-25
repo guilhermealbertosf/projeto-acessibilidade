@@ -13,7 +13,7 @@ function escaparHtml(valor) {
    });
 }
 
-function criarCardEscola(escola) {
+function criarCardDestaque(escola) {
    const nome = escaparHtml(escola.name);
    const endereco = escaparHtml(escola.address);
    const pontuacao = escaparHtml(Number(escola.ranking_score).toFixed(1));
@@ -26,7 +26,7 @@ function criarCardEscola(escola) {
          </div>
          <h3>${nome}</h3>
          <p class="suave">${endereco}</p>
-         <a class="botao" href="#escola">Ver escola</a>
+         <a class="botao" href="#escola" data-school-id="${escaparHtml(escola.id)}">Ver escola</a>
       </article>
    `;
 }
@@ -73,7 +73,7 @@ async function carregarDestaques() {
    try {
       const bairros = await listarBairros();
       const escolas = await Promise.all(bairros.map(buscarEscolaDoBairro));
-      const cards = escolas.filter(Boolean).map(criarCardEscola);
+      const cards = escolas.filter(Boolean).map(criarCardDestaque);
 
       listaDestaques.innerHTML = cards.length
          ? cards.join("")

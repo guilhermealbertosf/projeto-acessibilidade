@@ -5,7 +5,7 @@ async function apiFetch(path, options = {}) {
    const headers = new Headers(options.headers);
 
    if (token) {
-      headers.set("authorization", token);
+      headers.set("authorization", `bearer ${token}`);
    }
 
    return fetch(`${API_URL}${path}`, {

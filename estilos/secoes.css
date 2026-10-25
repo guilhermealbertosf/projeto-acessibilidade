@@ -277,18 +277,23 @@
 .nota-caixa {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   width: fit-content;
   margin: 20px 0 28px;
-  padding: 10px 20px;
+  padding: 12px 22px;
   border: 1.5px solid var(--roxo);
   border-radius: 14px;
   background: #fff;
 }
 
+.nota-caixa > span:last-child {
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
 .nota-caixa .nota {
   color: var(--roxo);
-  font-size: 40px;
+  font-size: 44px;
   font-weight: 700;
   line-height: 1;
 }
@@ -297,7 +302,7 @@
 .escola-mapa {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 280px) 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 24px;
   align-items: center;
   padding: 36px 28px 28px;
@@ -320,17 +325,30 @@
 .escola-mapa img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
   border-radius: 24px;
 }
 
-.escola-mapa h3,
-.escola-mapa p {
+.endereco-escola {
+  align-self: start;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+.endereco-escola h3,
+.endereco-escola p {
   color: #fff;
 }
 
-.escola-mapa .suave {
-  color: rgba(255, 255, 255, .85);
+.endereco-escola h3 {
+  margin-bottom: 24px;
+  font-size: 28px;
+}
+
+.endereco-escola p {
+  font-weight: 700;
 }
 
 /* Notas à esquerda (2/3) e informações extras à direita (1/3) */
@@ -342,6 +360,111 @@
 
 .detalhe .cartao > details:first-child {
   border: 0;
+}
+
+.avaliacoes-grupos {
+  display: grid;
+  gap: 18px;
+  margin: 22px 0 36px;
+}
+
+.avaliacao-grupo {
+  display: grid;
+  grid-template-columns: minmax(110px, 140px) minmax(0, 1fr) 42px;
+  gap: 16px;
+  align-items: center;
+}
+
+.avaliacao-grupo-trilho {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e8e5ee;
+}
+
+.avaliacao-grupo-trilho span {
+  display: block;
+  width: var(--progresso);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--laranja), #e79a5b);
+}
+
+.avaliacao-grupo-nota {
+  text-align: right;
+}
+
+.avaliacoes-familias {
+  max-height: 680px;
+  overflow-y: auto;
+}
+
+.review-familia {
+  padding: 18px 4px;
+}
+
+.review-familia + .review-familia {
+  border-top: 1px solid rgba(83, 56, 134, .16);
+}
+
+.review-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  position: relative;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #dedede;
+}
+
+.review-avatar::before,
+.review-avatar::after {
+  position: absolute;
+  left: 50%;
+  display: block;
+  background: #888;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.review-avatar::before {
+  top: 9px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.review-avatar::after {
+  bottom: -3px;
+  width: 28px;
+  height: 26px;
+  border-radius: 50% 50% 35% 35%;
+}
+
+.review-identidade {
+  display: grid;
+  gap: 3px;
+}
+
+.review-identidade time,
+.review-notas {
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+
+.review-notas {
+  margin: 12px 0 0 60px;
+}
+
+.review-observacao {
+  margin: 16px 0 0 10px;
+  line-height: 1.5;
 }
 
 /* Frase pequena no fim de um cartão (a fonte dos dados, ex.: "Censo Escolar 2025") */
