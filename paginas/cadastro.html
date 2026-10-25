@@ -29,12 +29,11 @@
                     <img class="logo-auth" src="../midia/logos/logo-enlace-digital.png" width="511" height="120" alt="Enlace Digital">
                     <h1 class="so-leitor">Cadastro</h1>
 
-                    <form class="formulario-auth" data-destino="login.html">
+                    <p id="errosCadastro" role="alert"></p>
+
+                    <form class="formulario-auth" data-destino="index.html">
                         <label class="so-leitor" for="nome">Nome</label>
                         <input type="text" id="nome" name="nome" placeholder="Digite seu nome" autocomplete="name" required>
-
-                        <label class="so-leitor" for="cpf">CPF</label>
-                        <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" inputmode="numeric" autocomplete="off" maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Use o formato 000.000.000-00" required>
 
                         <label class="so-leitor" for="email">E-mail</label>
                         <input type="email" id="email" name="email" placeholder="Digite seu email" autocomplete="email" required>
@@ -42,12 +41,8 @@
                         <label class="so-leitor" for="senha">Senha</label>
                         <input type="password" id="senha" name="senha" placeholder="Digite sua senha" autocomplete="new-password" minlength="8" required>
 
-                        <label class="so-leitor" for="vinculo">Seu vínculo com o estudante</label>
-                        <select id="vinculo" name="vinculo" required>
-                            <option value="" selected disabled>Selecione</option>
-                            <option value="responsavel">Responsável por estudante</option>
-                            <option value="familiar">Familiar de estudante</option>
-                        </select>
+                        <label class="so-leitor" for="confirmar-senha">Confirmar senha</label>
+                        <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Confirme sua senha" autocomplete="new-password" minlength="8" required>
 
                         <a class="link-auth" href="login.html">já tenho uma conta</a>
 
@@ -63,6 +58,8 @@
         </aside>
 
     </main>
+    <script src="../scripts/api.js"></script>
     <script src="../scripts/autenticacao.js"></script>
+    <script src="../scripts/cadastro.js"></script>
 </body>
 </html>
