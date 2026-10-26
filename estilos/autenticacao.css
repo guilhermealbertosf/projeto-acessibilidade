@@ -11,7 +11,7 @@
 body.pagina-autenticacao {
   min-height: 100vh;
   background: #1F1F1F;
-  font-family: 'Lora', Georgia, serif;
+  font-family: var(--fonte);
 }
 
 .autenticacao {
