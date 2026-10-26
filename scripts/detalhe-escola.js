@@ -24,22 +24,21 @@ function exibirDetalheEscola(escola) {
 
    const pontuacoes = Array.isArray(escola.scores) ? escola.scores : [];
    const gruposAvaliados = pontuacoes.filter(function (pontuacao) {
-      return Number(pontuacao.review_count) > 1 && Number.isFinite(Number(pontuacao.average));
+      return Number(pontuacao.review_count) >= 1 && Number.isFinite(Number(pontuacao.average));
    });
    const somaMedias = gruposAvaliados.reduce(function (total, pontuacao) {
       const media = Number(pontuacao.average);
       return total + media;
    }, 0);
-   const totalAvaliacoes = pontuacoes.reduce(function (total, pontuacao) {
-      const quantidade = Number(pontuacao.review_count);
-      return total + (Number.isFinite(quantidade) ? quantidade : 0);
-   }, 0);
+
+   const totalAvaliacoes = escola.total_reviews;
+
    const mediaGeral = gruposAvaliados.length
       ? (somaMedias / gruposAvaliados.length).toLocaleString("pt-BR", {
          minimumFractionDigits: 1,
          maximumFractionDigits: 1
       })
-      : "—";
+      : "-";
 
    document.getElementById("media-escola").textContent = mediaGeral;
    document.getElementById("total-avaliacoes-escola").textContent =
