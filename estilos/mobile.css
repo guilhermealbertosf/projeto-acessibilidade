@@ -219,6 +219,32 @@ header {
 /* --------------------------------------------------------------------------
    Rodapé
    -------------------------------------------------------------------------- */
-footer {
-  padding: 28px 16px;
+.footer-modern {
+  padding: 28px 16px 18px;
+}
+
+.footer-columns {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.footer-commitment,
+.footer-base {
+  display: block;
+}
+
+.footer-commitment {
+  margin-bottom: 18px;
+}
+
+.footer-commitment p {
+  margin-top: 12px;
+}
+
+.footer-base {
+  padding-top: 14px;
+}
+
+.footer-base nav {
+  margin-top: 10px;
 }
